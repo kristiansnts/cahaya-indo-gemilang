@@ -1,18 +1,34 @@
-import styles from './PageHero.module.css';
+import Link from 'next/link';
 
 interface PageHeroProps {
-  title: string;
-  subtitle: string;
+  eyebrow: string;
+  title: React.ReactNode;
+  desc: string;
+  breadcrumb: string;
 }
 
-export default function PageHero({ title, subtitle }: PageHeroProps) {
+export default function PageHero({ eyebrow, title, desc, breadcrumb }: PageHeroProps) {
   return (
-    <section className={styles.hero}>
-      <div className={styles.overlay}></div>
-      <div className={`container ${styles.content}`}>
-        <h1 className={styles.title}>{title}</h1>
-        <p className={styles.subtitle}>{subtitle}</p>
+    <>
+      <div className="page-hero">
+        <div className="page-hero-bg"></div>
+        <div className="page-hero-grid"></div>
+        <div className="page-hero-line"></div>
+        <div className="container page-hero-content">
+          <div className="page-eyebrow">{eyebrow}</div>
+          <h1 className="page-title">{title}</h1>
+          <p className="page-desc">{desc}</p>
+        </div>
       </div>
-    </section>
+      <div className="breadcrumb">
+        <div className="container">
+          <div className="breadcrumb-inner">
+            <Link href="/">Beranda</Link>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+            <span>{breadcrumb}</span>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

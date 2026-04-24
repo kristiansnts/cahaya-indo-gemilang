@@ -12,7 +12,7 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   title: 'PT Cahaya Indo Gemilang – Solusi HSE Terintegrasi Radiasi',
-  description: 'Solusi pengelolaan limbah B3 dan TENORM untuk industri Migas & Minerba Indonesia.',
+  description: 'Solusi pengelolaan limbah B3 dan TENORM/MIR untuk industri Migas & Minerba Indonesia.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

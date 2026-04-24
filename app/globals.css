@@ -449,6 +449,9 @@ body { font-family: var(--sans); color: var(--gray-900); background: var(--white
 .org-node-name { font-size: 13.5px; font-weight: 600; color: var(--navy); line-height: 1.4; }
 .org-node-name.tbd { color: var(--gray-500); font-style: italic; font-weight: 400; font-size: 12px; }
 
+.org-pembina-node { background: var(--gold); border-color: var(--gold); min-width: 220px; }
+.org-pembina-node .org-node-role { color: var(--navy); font-size: 11px; letter-spacing: .08em; }
+.org-pembina-node .org-node-name { color: var(--navy); }
 .org-director-node { background: var(--navy); border-color: var(--navy); min-width: 200px; }
 .org-director-node .org-node-role { color: var(--gold-light); }
 .org-director-node .org-node-name { color: var(--white); }
@@ -464,12 +467,28 @@ body { font-family: var(--sans); color: var(--gray-900); background: var(--white
 .org-experts-list { list-style: decimal; padding-left: 18px; margin: 10px 0 0; font-size: 12px; color: var(--navy); line-height: 1.9; text-align: left; }
 
 /* Directors row */
+/* Directors: CSS grid so both cards are always aligned; ::before/::after draw top+bottom connector bars */
+.org-directors-grid {
+  display: grid;
+  grid-template-columns: 220px 220px;
+  gap: 48px;
+  position: relative;
+  padding-top: 32px;   /* space for top stems */
+  padding-bottom: 32px; /* space for bottom stems */
+}
+/* Top horizontal bar (left: 110px = center of 220px col; right: same from right edge) */
+.org-directors-grid::before { content: ''; position: absolute; top: 0; left: 110px; right: 110px; height: 2px; background: var(--gold); }
+/* Bottom horizontal bar */
+.org-directors-grid::after  { content: ''; position: absolute; bottom: 0; left: 110px; right: 110px; height: 2px; background: var(--gold); }
+
+/* Each director card: fixed min-height + top & bottom stems */
+.org-director-node { position: relative; min-height: 88px; }
+.org-director-node::before { content: ''; position: absolute; top: -32px; left: 50%; transform: translateX(-50%); width: 2px; height: 32px; background: var(--gold); }
+.org-director-node::after  { content: ''; position: absolute; bottom: -32px; left: 50%; transform: translateX(-50%); width: 2px; height: 32px; background: var(--gold); }
+
 .org-directors { display: flex; justify-content: center; gap: 48px; }
 
-/* 2-to-1 connector: horizontal bar from each director center, vertical spine from middle */
-.org-2to1 { width: 448px; height: 32px; position: relative; flex-shrink: 0; }
-.org-2to1::before { content: ''; position: absolute; top: 0; left: 100px; right: 100px; height: 2px; background: var(--gold); }
-.org-2to1::after { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: var(--gold); }
+
 
 /* Generic vertical line */
 .org-v-line { width: 2px; height: 32px; background: var(--gold); flex-shrink: 0; }

@@ -1,17 +1,18 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
 import Link from 'next/link';
 
 const missionVision: Array<{ number: string; title: string; body: string; dark?: boolean }> = [
   {
     number: '01',
     title: 'Visi Kami',
-    body: 'Menjadi perusahaan pengelola limbah B3 dan TENORM terpercaya dan terdepan di Indonesia yang berwawasan lingkungan, berteknologi tinggi, serta menjadi mitra strategis industri migas dan minerba nasional.',
+    body: 'Menjadi perusahaan pengelola limbah B3 dan TENORM/MIR terpercaya dan terdepan di Indonesia yang ⁠berwawasan Keselamatan Lingkungan, Keselamatan Radiasi, Keamanan Radioaktif, berteknologi tinggi dst tetap.',
   },
   {
     number: '02',
     title: 'Misi Kami',
-    body: 'Menghadirkan solusi pengelolaan limbah B3 dan TENORM yang aman, patuh regulasi, dan berkelanjutan; membangun kapasitas SDM ahli di bidang radiasi dan lingkungan; serta mendukung industri Indonesia menuju operasi yang bertanggung jawab.',
+    body: 'Menghadirkan solusi pengelolaan limbah B3 dan TENORM/MIR yang aman, patuh regulasi, dan berkelanjutan; membangun kapasitas SDM ahli di bidang radiasi dan lingkungan; serta mendukung industri Indonesia menuju operasi yang bertanggung jawab.',
     dark: true,
   },
 ];
@@ -35,17 +36,17 @@ const timeline = [
   {
     year: 'Pendirian',
     event: 'PT Cahaya Indo Gemilang Berdiri',
-    desc: 'Perusahaan didirikan dengan fokus awal pada jasa pengelolaan limbah B3 industri di wilayah Jakarta dan sekitarnya.',
+    desc: 'Perusahaan didirikan dengan fokus awal pada pekerjaan/jasa Pengelolaan Perlindungan Lingkungan, Limbah B3, Non B3, Keselamatan Radiasi, Keamanan Radioaktif industri di wilayah Jakarta dan sekitarnya.',
   },
   {
     year: 'Pengembangan',
-    event: 'Pembentukan Unit TENORM',
-    desc: 'Merespons kebutuhan industri migas, kami membentuk kompartemen khusus pengelolaan TENORM dengan dukungan tenaga ahli nuklir bersertifikasi BAPETEN.',
+    event: 'Pembentukan Unit TENORM/MIR',
+    desc: 'Merespons kebutuhan industri migas, kami membentuk unit khusus pengelolaan TENORM/MIR dengan dukungan tenaga ahli nuklir bersertifikasi BAPETEN.',
   },
   {
     year: 'Ekspansi',
     event: 'Kemitraan Strategis Industri',
-    desc: 'Memperluas jangkauan layanan ke sektor minerba dan menjalin kemitraan dengan perusahaan-perusahaan SKK Migas terkemuka.',
+    desc: 'Memperluas jangkauan layanan ke sektor minerba dan menjalin kemitraan dengan perusahaan-perusahaan yang bergerak di bidang Minerba/Migas terkemuka.',
   },
   {
     year: 'Kini',
@@ -65,25 +66,12 @@ export default function TentangKami() {
     <>
       <Navbar />
 
-      <div className="page-hero">
-        <div className="page-hero-bg"></div>
-        <div className="page-hero-grid"></div>
-        <div className="page-hero-line"></div>
-        <div className="container page-hero-content">
-          <div className="page-eyebrow">PT Cahaya Indo Gemilang</div>
-          <h1 className="page-title">Tentang <em>Kami</em></h1>
-          <p className="page-desc">Perusahaan terdepan dalam pengelolaan limbah B3 dan HSE Terintegrasi Radiasi untuk industri Migas &amp; Minerba Indonesia.</p>
-        </div>
-      </div>
-      <div className="breadcrumb">
-        <div className="container">
-          <div className="breadcrumb-inner">
-            <Link href="/">Beranda</Link>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
-            <span>Tentang Kami</span>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="PT Cahaya Indo Gemilang"
+        title={<>Tentang <em>Kami</em></>}
+        desc="Perusahaan terdepan dalam pengelolaan limbah B3 dan HSE Terintegrasi Radiasi untuk industri Migas &amp; Minerba Indonesia."
+        breadcrumb="Tentang Kami"
+      />
 
       {/* INTRO */}
       <section className="section">
@@ -105,7 +93,7 @@ export default function TentangKami() {
               <h2 className="section-heading">Mencegah &amp; Memitigasi Risiko Lingkungan Industri</h2>
               <div className="gold-line"></div>
               <p>PT Cahaya Indo Gemilang adalah perusahaan yang bergerak di bidang <strong>pengelolaan limbah Bahan Berbahaya dan Beracun (B3)</strong> serta pengembangan unit khusus Kompartemen Pengelola HSE Terintegrasi Radiasi.</p>
-              <p>Didirikan dengan komitmen penuh terhadap keselamatan kerja dan kelestarian lingkungan, kami hadir untuk merespons kebutuhan sektor industri migas dan minerba akan solusi penanganan <strong>TENORM (Naturally Occurring Radioactive Materials)</strong> yang profesional dan sesuai regulasi.</p>
+              <p>Didirikan dengan komitmen penuh terhadap keselamatan kerja dan kelestarian lingkungan, kami hadir untuk merespons kebutuhan sektor industri migas dan minerba akan solusi penanganan <strong>TENORM/MIR (Naturally Occurring Radioactive Materials)</strong> yang profesional dan sesuai regulasi.</p>
               <p>Dengan tim ahli bersertifikasi nasional dan jaringan mitra strategis, PT Cahaya Indo Gemilang memberikan layanan komprehensif — mulai dari survei awal, identifikasi risiko, hingga pengelolaan akhir limbah berbahaya.</p>
               <div style={{ display: 'flex', gap: 16, marginTop: 32, flexWrap: 'wrap' }}>
                 <Link href="/hubungi-kami" className="btn-primary">Konsultasi Gratis</Link>
@@ -209,8 +197,15 @@ export default function TentangKami() {
             <p className="org-scroll-hint">← Geser untuk melihat selengkapnya →</p>
             <div className="org-chart">
 
-              {/* Level 1: Two directors */}
-              <div className="org-directors">
+              {/* Level 0: Pembina */}
+              <div className="org-node org-pembina-node">
+                <div className="org-node-role">Pembina</div>
+                <div className="org-node-name">Abd Ghani Hasan, BSc, MBA</div>
+              </div>
+              <div className="org-v-line" style={{ height: 32 }}></div>
+
+              {/* Level 1: Directors grid — handles top & bottom connectors */}
+              <div className="org-directors-grid">
                 <div className="org-node org-director-node">
                   <div className="org-node-role">Direktur Utama</div>
                   <div className="org-node-name">Firdaus Ronnyco I.S, SE</div>
@@ -220,9 +215,6 @@ export default function TentangKami() {
                   <div className="org-node-name">Arthur Soritua Siregar, S.Psi</div>
                 </div>
               </div>
-
-              {/* 2-to-1 connector */}
-              <div className="org-2to1" />
 
               {/* Level 2: GM */}
               <div className="org-node org-gm-node">
@@ -254,7 +246,7 @@ export default function TentangKami() {
                       <li>Ahli Pengelolaan Limbah B3</li>
                       <li>Ahli Teknik Lingkungan</li>
                       <li>Ahli Keselamatan Radiasi</li>
-                      <li>Ahli Ketenaganukliran</li>
+                      <li>Ahli Keamanan Radioaktif</li>
                       <li>Tenaga Teknis Pengelolaan Limbah</li>
                     </ol>
                   </div>

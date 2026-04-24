@@ -1,12 +1,13 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ArtikelGrid from '@/components/ArtikelGrid';
+import PageHero from '@/components/PageHero';
 import Link from 'next/link';
 
 const featuredArticle = {
   category: 'Regulasi & Kepatuhan',
-  title: 'Pemahaman Regulasi BAPETEN tentang Pengelolaan TENORM di Industri Migas Indonesia',
-  excerpt: 'Panduan komprehensif mengenai kerangka regulasi BAPETEN yang mengatur pengelolaan Technologically Enhanced Naturally Occurring Radioactive Materials (TENORM) — mencakup persyaratan izin, prosedur survei, dan standar pembuangan yang wajib dipenuhi operator industri migas.',
+  title: 'Pemahaman Regulasi BAPETEN tentang Pengelolaan TENORM/MIR di Industri Migas Indonesia',
+  excerpt: 'Panduan komprehensif mengenai kerangka regulasi BAPETEN yang mengatur pengelolaan Technologically Enhanced Naturally Occurring Radioactive Materials (TENORM/MIR) — mencakup persyaratan izin, prosedur survei, dan standar pembuangan yang wajib dipenuhi operator industri migas.',
   author: 'Tim Ahli CIG',
   date: 'Maret 2026',
   readTime: '12 menit baca',
@@ -17,25 +18,12 @@ export default function ArtikelPublikasi() {
     <>
       <Navbar />
 
-      <div className="page-hero">
-        <div className="page-hero-bg"></div>
-        <div className="page-hero-grid"></div>
-        <div className="page-hero-line"></div>
-        <div className="container page-hero-content">
-          <div className="page-eyebrow">Pengetahuan &amp; Wawasan</div>
-          <h1 className="page-title">Artikel &amp; <em>Publikasi</em></h1>
-          <p className="page-desc">Wawasan teknis, regulasi terkini, dan praktik terbaik di bidang pengelolaan limbah B3, TENORM, dan keselamatan radiasi industri.</p>
-        </div>
-      </div>
-      <div className="breadcrumb">
-        <div className="container">
-          <div className="breadcrumb-inner">
-            <Link href="/">Beranda</Link>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
-            <span>Artikel &amp; Publikasi</span>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="Pengetahuan &amp; Wawasan"
+        title={<>Artikel &amp; <em>Publikasi</em></>}
+        desc="Wawasan teknis, regulasi terkini, dan praktik terbaik di bidang pengelolaan limbah B3, TENORM/MIR, dan keselamatan radiasi industri."
+        breadcrumb="Artikel &amp; Publikasi"
+      />
 
       <section className="section">
         <div className="container">

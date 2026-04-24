@@ -109,28 +109,28 @@
   margin-top: 2px;
 }
 
-.tenormGrid {
+.TENORM/MIRGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 40px;
 }
 
-.tenormSubCard {
+.TENORM/MIRSubCard {
   background: #f8fafc;
   padding: 25px;
   border-radius: 8px;
   border-left: 4px solid #e53e3e;
 }
 
-.tenormSubTitle {
+.TENORM/MIRSubTitle {
   font-size: 1.1rem;
   font-weight: 700;
   color: #1a202c;
   margin-bottom: 8px;
 }
 
-.tenormSubDesc {
+.TENORM/MIRSubDesc {
   font-size: 0.9rem;
   color: #718096;
 }

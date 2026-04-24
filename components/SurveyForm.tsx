@@ -69,7 +69,7 @@ export default function SurveyForm() {
           <select required defaultValue="">
             <option value="" disabled>Pilih layanan...</option>
             <option>Pengelolaan Limbah B3</option>
-            <option>Survei &amp; Pengelolaan TENORM</option>
+            <option>Survei &amp; Pengelolaan TENORM/MIR</option>
             <option>Konsultansi K3L/HSE</option>
             <option>Sistem Monitoring Radiasi</option>
             <option>Audit HSE</option>

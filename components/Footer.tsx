@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <div className="footer-brand-name">Cahaya Indo Gemilang</div>
             <div className="footer-brand-sub">HSE Terintegrasi Radiasi</div>
-            <p className="footer-brand-bio">Solusi pengelolaan limbah B3 dan TENORM untuk industri Migas &amp; Minerba. Berkomitmen pada keselamatan kerja dan kelestarian lingkungan Indonesia.</p>
+            <p className="footer-brand-bio">Solusi pengelolaan limbah B3 dan TENORM/MIR untuk industri Migas &amp; Minerba. Berkomitmen pada keselamatan kerja dan kelestarian lingkungan Indonesia.</p>
           </div>
           <div className="footer-col">
             <h4>Navigasi</h4>
@@ -25,7 +25,7 @@ export default function Footer() {
             <h4>Layanan</h4>
             <ul>
               <li><Link href="/layanan">Pengelolaan Limbah B3</Link></li>
-              <li><Link href="/layanan">Pengelolaan TENORM</Link></li>
+              <li><Link href="/layanan">Pengelolaan TENORM/MIR</Link></li>
               <li><Link href="/layanan">Konsultansi K3L/HSE</Link></li>
               <li><Link href="/layanan">Pengembangan Teknologi</Link></li>
             </ul>

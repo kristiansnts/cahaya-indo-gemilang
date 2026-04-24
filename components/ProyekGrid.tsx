@@ -2,15 +2,15 @@
 
 import { useState } from 'react';
 
-const TABS = ['Semua', 'TENORM', 'Limbah B3', 'Konsultansi HSE', 'Teknologi'] as const;
+const TABS = ['Semua', 'TENORM/MIR', 'Limbah B3', 'Konsultansi HSE', 'Teknologi'] as const;
 
 const projects = [
   {
     iconIdx: 0,
-    category: 'TENORM',
+    category: 'TENORM/MIR',
     client: 'Perusahaan Migas — Riau',
     title: 'Pemetaan Hotspot Radiasi Jaringan Pipa',
-    desc: 'Survei menyeluruh jaringan pipa produksi sepanjang 45 km untuk identifikasi titik akumulasi TENORM dan rekomendasi penanganan.',
+    desc: 'Survei menyeluruh jaringan pipa produksi sepanjang 45 km untuk identifikasi titik akumulasi TENORM/MIR dan rekomendasi penanganan.',
     meta: { location: 'Provinsi Riau', duration: '4 Bulan', status: 'Selesai' },
   },
   {
@@ -31,10 +31,10 @@ const projects = [
   },
   {
     iconIdx: 3,
-    category: 'TENORM',
+    category: 'TENORM/MIR',
     client: 'Operator Migas — Sumatera Selatan',
     title: 'Dekontaminasi Peralatan Produksi Migas',
-    desc: 'Program dekontaminasi menyeluruh peralatan produksi yang terkontaminasi TENORM, termasuk pengelolaan dan pembuangan limbah radioaktif sesuai regulasi.',
+    desc: 'Program dekontaminasi menyeluruh peralatan produksi yang terkontaminasi TENORM/MIR, termasuk pengelolaan dan pembuangan limbah radioaktif sesuai regulasi.',
     meta: { location: 'Sumatera Selatan', duration: '5 Bulan', status: 'Selesai' },
   },
   {

@@ -7,7 +7,7 @@ export default function Contact() {
         <div className={styles.info}>
           <h2 className={styles.heading}>Konsultasikan Kebutuhan Limbah Industri Anda</h2>
           <p className={styles.desc}>
-            Tim ahli kami siap membantu Anda melakukan survei TENORM dan pengelolaan limbah B3 sesuai regulasi pemerintah.
+            Tim ahli kami siap membantu Anda melakukan survei TENORM/MIR dan pengelolaan limbah B3 sesuai regulasi pemerintah.
           </p>
           
           <div className={styles.contactItems}>
@@ -60,7 +60,7 @@ export default function Contact() {
               <label>Layanan yang Dibutuhkan *</label>
               <select>
                 <option>Pengelolaan Limbah B3</option>
-                <option>Pengelolaan TENORM</option>
+                <option>Pengelolaan TENORM/MIR</option>
                 <option>Konsultansi K3L/HSE</option>
               </select>
             </div>

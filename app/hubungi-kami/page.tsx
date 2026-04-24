@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
 import SurveyForm from '@/components/SurveyForm';
 import Link from 'next/link';
 
@@ -11,13 +12,13 @@ const contactItems = [
   },
   {
     label: 'Hotline Layanan 24/7',
-    lines: ['+62878-9076-0055'],
-    href: 'tel:+6287890760055',
+    lines: ['08139869311'],
+    href: 'tel:08139869311',
   },
   {
     label: 'WhatsApp',
-    lines: ['+62878-9076-0055'],
-    href: 'https://wa.me/6287890760055',
+    lines: ['08139869311'],
+    href: 'https://wa.me/628139869311',
   },
   {
     label: 'Email',
@@ -44,25 +45,12 @@ export default function HubungiKami() {
     <>
       <Navbar />
 
-      <div className="page-hero">
-        <div className="page-hero-bg"></div>
-        <div className="page-hero-grid"></div>
-        <div className="page-hero-line"></div>
-        <div className="container page-hero-content">
-          <div className="page-eyebrow">Kami Siap Membantu</div>
-          <h1 className="page-title">Hubungi <em>Kami</em></h1>
-          <p className="page-desc">Konsultasikan kebutuhan pengelolaan limbah B3 dan TENORM Anda dengan tim ahli kami. Respons dalam 1x24 jam kerja.</p>
-        </div>
-      </div>
-      <div className="breadcrumb">
-        <div className="container">
-          <div className="breadcrumb-inner">
-            <Link href="/">Beranda</Link>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
-            <span>Hubungi Kami</span>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="Kami Siap Membantu"
+        title={<>Hubungi <em>Kami</em></>}
+        desc="Konsultasikan kebutuhan pengelolaan limbah B3 dan TENORM/MIR Anda dengan tim ahli kami. Respons dalam 1x24 jam kerja."
+        breadcrumb="Hubungi Kami"
+      />
 
       <section className="section">
         <div className="container">

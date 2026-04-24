@@ -3,12 +3,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-const TABS = ['Semua', 'TENORM', 'Limbah B3', 'HSE', 'Regulasi', 'Teknologi', 'Studi Kasus'] as const;
+const TABS = ['Semua', 'TENORM/MIR', 'Limbah B3', 'HSE', 'Regulasi', 'Teknologi', 'Studi Kasus'] as const;
 
 const articleCards = [
   {
     iconIdx: 0,
-    tag: 'TENORM',
+    tag: 'TENORM/MIR',
     category: 'Keselamatan Radiasi',
     title: 'Metode Survei Radiasi Lapangan untuk Operator Migas',
     excerpt: 'Teknik dan prosedur standar untuk melakukan survei radiasi di lingkungan industri migas, termasuk pemilihan instrumen dan interpretasi data lapangan.',
@@ -51,7 +51,7 @@ const articleCards = [
     tag: 'Studi Kasus',
     category: 'Studi Kasus',
     title: 'Studi Kasus: Dekontaminasi Berhasil di Fasilitas Produksi Migas Kalimantan',
-    excerpt: 'Dokumentasi proses dan hasil program dekontaminasi TENORM komprehensif yang berhasil memulihkan fasilitas produksi ke standar operasi normal.',
+    excerpt: 'Dokumentasi proses dan hasil program dekontaminasi TENORM/MIR komprehensif yang berhasil memulihkan fasilitas produksi ke standar operasi normal.',
     date: 'September 2025',
   },
 ];
@@ -65,7 +65,7 @@ const categories = [
   { name: 'Studi Kasus', count: 1 },
 ];
 
-const popularTags = ['TENORM', 'Limbah B3', 'HSE', 'Regulasi', 'Teknologi', 'Studi Kasus'];
+const popularTags = ['TENORM/MIR', 'Limbah B3', 'HSE', 'Regulasi', 'Teknologi', 'Studi Kasus'];
 
 const icons = [
   <svg key="0" className="article-card-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="currentColor" strokeWidth="1.5" fill="rgba(197,151,58,0.05)"/><circle cx="20" cy="20" r="4" fill="rgba(197,151,58,0.25)"/><line x1="20" y1="6" x2="20" y2="16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><line x1="24" y1="23" x2="32.1" y2="27.7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/><line x1="16" y1="23" x2="7.9" y2="27.7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>,

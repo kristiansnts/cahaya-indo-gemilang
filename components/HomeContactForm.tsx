@@ -46,7 +46,7 @@ export default function HomeContactForm() {
           <select required>
             <option value="" disabled>Pilih layanan...</option>
             <option>Pengelolaan Limbah B3</option>
-            <option>Pengelolaan TENORM</option>
+            <option>Pengelolaan TENORM/MIR</option>
             <option>Konsultansi K3L/HSE</option>
             <option>Pengembangan Teknologi</option>
           </select>

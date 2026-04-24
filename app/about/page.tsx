@@ -8,7 +8,7 @@ export default function AboutPage() {
   const missions = [
     'Menyediakan solusi pengelolaan limbah yang aman dan berkelanjutan.',
     'Mengintegrasikan standar keselamatan radiasi dalam setiap layanan.',
-    'Mendukung industri migas, minerba, dan energi dalam mitigasi risiko Radiasi/TENORM.',
+    'Mendukung industri migas, minerba, dan energi dalam mitigasi risiko Radiasi/TENORM/MIR.',
     'Membangun SDM ahli melalui kolaborasi profesional dan lembaga nasional.'
   ];
 
@@ -38,9 +38,11 @@ export default function AboutPage() {
   return (
     <main>
       <Navbar />
-      <PageHero 
-        title="Tentang Kami" 
-        subtitle="Mengenal lebih dekat komitmen PT RRAD Jaya Abadi dalam menjaga keselamatan lingkungan dan radiasi"
+      <PageHero
+        eyebrow="PT Cahaya Indo Gemilang"
+        title="Tentang Kami"
+        desc="Mengenal lebih dekat komitmen PT RRAD Jaya Abadi dalam menjaga keselamatan lingkungan dan radiasi"
+        breadcrumb="Tentang Kami"
       />
 
       {/* Profil Perusahaan */}
@@ -54,7 +56,7 @@ export default function AboutPage() {
                 PT RRAD Jaya Abadi adalah perusahaan yang bergerak di bidang pengelolaan limbah B3 dan kini mengembangkan unit khusus berupa <strong>Kompartemen Pengelola HSE Terintegrasi Radiasi</strong>.
               </p>
               <p>
-                Kami fokus mencegah, memantau, dan memitigasi dampak Limbah B3 Terkontaminasi Radioaktif/TENORM. Ini adalah bentuk respons kami terhadap meningkatnya kebutuhan keselamatan lingkungan, pekerja, serta masyarakat di sektor industri migas, minerba, dan sektor industri lainnya.
+                Kami fokus mencegah, memantau, dan memitigasi dampak Limbah B3 Terkontaminasi Radioaktif/TENORM/MIR. Ini adalah bentuk respons kami terhadap meningkatnya kebutuhan keselamatan lingkungan, pekerja, serta masyarakat di sektor industri migas, minerba, dan sektor industri lainnya.
               </p>
             </div>
             <div style={{ position: 'relative', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }}>

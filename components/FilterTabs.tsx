@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-const tabs = ['Semua', 'Limbah B3', 'TENORM', 'Konsultansi HSE', 'Migas', 'Minerba'];
+const tabs = ['Semua', 'Limbah B3', 'TENORM/MIR', 'Konsultansi HSE', 'Migas', 'Minerba'];
 
 export default function FilterTabs() {
   const [active, setActive] = useState('Semua');

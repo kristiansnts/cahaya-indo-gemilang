@@ -1,12 +1,13 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ProyekGrid from '@/components/ProyekGrid';
+import PageHero from '@/components/PageHero';
 import Link from 'next/link';
 
 const featuredProject = {
   client: 'Industri Migas — Kalimantan Timur',
-  title: 'Survei & Pengelolaan TENORM Fasilitas Produksi Minyak Bumi',
-  desc: 'Program komprehensif survei radiasi lapangan, pemetaan hotspot TENORM, dan implementasi sistem pengelolaan limbah radioaktif di fasilitas produksi migas berskala besar.',
+  title: 'Survei & Pengelolaan TENORM/MIR Fasilitas Produksi Minyak Bumi',
+  desc: 'Program komprehensif survei radiasi lapangan, pemetaan hotspot TENORM/MIR, dan implementasi sistem pengelolaan limbah radioaktif di fasilitas produksi migas berskala besar.',
   stats: [
     { value: '12', label: 'Titik Survei' },
     { value: '100%', label: 'Kepatuhan BAPETEN' },
@@ -20,25 +21,12 @@ export default function ProyekPortofolio() {
     <>
       <Navbar />
 
-      <div className="page-hero">
-        <div className="page-hero-bg"></div>
-        <div className="page-hero-grid"></div>
-        <div className="page-hero-line"></div>
-        <div className="container page-hero-content">
-          <div className="page-eyebrow">Rekam Jejak Kami</div>
-          <h1 className="page-title">Proyek &amp; <em>Portofolio</em></h1>
-          <p className="page-desc">Dokumentasi proyek-proyek pengelolaan limbah B3 dan TENORM yang telah berhasil kami selesaikan bersama mitra industri terkemuka.</p>
-        </div>
-      </div>
-      <div className="breadcrumb">
-        <div className="container">
-          <div className="breadcrumb-inner">
-            <Link href="/">Beranda</Link>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
-            <span>Proyek &amp; Portofolio</span>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="Rekam Jejak Kami"
+        title={<>Proyek &amp; <em>Portofolio</em></>}
+        desc="Dokumentasi proyek-proyek pengelolaan limbah B3 dan TENORM/MIR yang telah berhasil kami selesaikan bersama mitra industri terkemuka."
+        breadcrumb="Proyek &amp; Portofolio"
+      />
 
       <section className="section">
         <div className="container">

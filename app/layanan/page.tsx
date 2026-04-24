@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import PageHero from '@/components/PageHero';
 import Link from 'next/link';
 
 const services: Array<{
@@ -26,14 +27,14 @@ const services: Array<{
   },
   {
     number: '02',
-    name: 'Pengelolaan TENORM',
+    name: 'Pengelolaan TENORM/MIR',
     tag: 'Radiation Safety',
     badge: 'Unggulan',
-    desc: 'Survei radiasi lapangan, pemetaan hotspot radioaktif, dan penanganan limbah TENORM (Technologically Enhanced Naturally Occurring Radioactive Materials) untuk industri migas dan minerba sesuai izin BAPETEN.',
+    desc: 'Survei radiasi lapangan, pemetaan hotspot radioaktif, dan penanganan limbah TENORM/MIR (Technologically Enhanced Naturally Occurring Radioactive Materials) untuk industri migas dan minerba sesuai izin BAPETEN.',
     items: [
       'Survei Radiasi Lapangan',
       'Pemetaan & Hotspot Mapping',
-      'Pengambilan Sampel NORM/TENORM',
+      'Pengambilan Sampel NORM/TENORM/MIR',
       'Analisis Laboratorium',
       'Dekontaminasi Area & Peralatan',
       'Pengelolaan Akhir Limbah Radioaktif',
@@ -89,25 +90,12 @@ export default function Layanan() {
     <>
       <Navbar />
 
-      <div className="page-hero">
-        <div className="page-hero-bg"></div>
-        <div className="page-hero-grid"></div>
-        <div className="page-hero-line"></div>
-        <div className="container page-hero-content">
-          <div className="page-eyebrow">Apa yang Kami Tawarkan</div>
-          <h1 className="page-title">Layanan <em>Profesional</em></h1>
-          <p className="page-desc">Solusi terintegrasi untuk pengelolaan limbah B3, TENORM, konsultansi HSE, dan pengembangan teknologi industri.</p>
-        </div>
-      </div>
-      <div className="breadcrumb">
-        <div className="container">
-          <div className="breadcrumb-inner">
-            <Link href="/">Beranda</Link>
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
-            <span>Layanan</span>
-          </div>
-        </div>
-      </div>
+      <PageHero
+        eyebrow="Apa yang Kami Tawarkan"
+        title={<>Layanan <em>Profesional</em></>}
+        desc="Solusi terintegrasi untuk pengelolaan limbah B3, TENORM/MIR, konsultansi HSE, dan pengembangan teknologi industri."
+        breadcrumb="Layanan"
+      />
 
       {/* SERVICES LIST */}
       <section className="section">
