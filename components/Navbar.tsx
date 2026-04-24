@@ -42,11 +42,14 @@ export default function Navbar() {
               <Image
                 src="/images/logo.png"
                 alt="PT Cahaya Indo Gemilang"
-                width={72}
-                height={36}
+                width={120}
+                height={140}
                 priority
-                style={{ objectFit: 'contain', height: 'auto' }}
+                style={{ width: 'auto', height: 48, objectFit: 'contain' }}
               />
+              <span className="nav-logo-text">
+                <span className="nav-logo-name">PT Cahaya Indo Gemilang</span>
+              </span>
             </Link>
             <ul className="nav-links">
               {links.map(link => (

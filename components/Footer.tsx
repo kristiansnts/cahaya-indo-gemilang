@@ -43,7 +43,6 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <div className="footer-copy">© 2026 PT Cahaya Indo Gemilang. All rights reserved.</div>
-          <div className="footer-reg">Kompartemen Pengelola HSE Terintegrasi Radiasi</div>
         </div>
       </div>
     </footer>
