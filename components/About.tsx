@@ -9,7 +9,7 @@ export default function About() {
           <div className={styles.mainImage}>
             <Image 
               src="/images/director.png" 
-              alt="Muhammad Rifli - Direktur Utama" 
+              alt="Firdaus Ronnyco I.S - Direktur Utama" 
               width={500} 
               height={600}
               className={styles.img}
@@ -18,7 +18,7 @@ export default function About() {
           <div className={styles.overlayCard}>
             <div className={styles.cardInfo}>
               <span className={styles.dipimpin}>Dipimpin Oleh</span>
-              <h4 className={styles.name}>Muhammad Rifli</h4>
+              <h4 className={styles.name}>Firdaus Ronnyco I.S</h4>
               <span className={styles.title}>Direktur Utama</span>
             </div>
           </div>

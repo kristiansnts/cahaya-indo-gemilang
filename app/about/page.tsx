@@ -98,7 +98,7 @@ export default function AboutPage() {
               "Kami tidak hanya bekerja, tetapi memastikan kepatuhan mutlak terhadap regulasi KLH, BAPETEN, ESDM, dan SKK Migas demi keselamatan bersama."
             </p>
             <div className={styles.quoteAuthor}>
-              <strong>Muhammad Rifli</strong>
+              <strong>Firdaus Ronnyco I.S</strong>
               <span>Direktur Utama</span>
             </div>
           </div>

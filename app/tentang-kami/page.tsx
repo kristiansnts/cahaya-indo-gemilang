@@ -96,7 +96,7 @@ export default function TentangKami() {
               <div className="about-accent-bar"></div>
               <div className="about-director-card">
                 <div className="about-director-label">Dipimpin Oleh</div>
-                <div className="about-director-name">Muhammad Rifli</div>
+                <div className="about-director-name">Firdaus Ronnyco I.S</div>
                 <div className="about-director-title">Direktur Utama</div>
               </div>
             </div>
