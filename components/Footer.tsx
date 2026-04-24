@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer-grid">
           <div>
-            <div className="footer-brand-name">Cahaya Indo Gemilang</div>
+            <div className="footer-brand-name">PT Cahaya Indo Gemilang</div>
             <div className="footer-brand-sub">HSE Terintegrasi Radiasi</div>
             <p className="footer-brand-bio">Solusi pengelolaan limbah B3 dan TENORM/MIR untuk industri Migas &amp; Minerba. Berkomitmen pada keselamatan kerja dan kelestarian lingkungan Indonesia.</p>
           </div>

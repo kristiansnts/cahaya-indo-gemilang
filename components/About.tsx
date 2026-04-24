@@ -9,10 +9,10 @@ export default function About() {
           <div className="about-img-wrapper fade-up">
             <div className="about-img-placeholder">
               <Image
-                src="/images/image-1.jpg"
+                src="/images/about-team.jpg"
                 alt="Tim lapangan PT Cahaya Indo Gemilang"
                 fill
-                style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
                 sizes="(max-width: 1024px) 100vw, 45vw"
               />
             </div>

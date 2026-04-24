@@ -36,16 +36,13 @@ export default function ProyekPortofolio() {
             <h2 className="section-heading">Studi Kasus Terpilih</h2>
           </div>
           <div className="featured-project fade-up">
-            <div className="featured-visual">
-              <div className="featured-visual-grid"></div>
+            <div className="featured-visual" style={{ padding: 0, overflow: 'hidden' }}>
+              <img 
+                src="/images/proyek/utama-kaltim.png" 
+                alt={featuredProject.title} 
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
               <div className="featured-badge">Proyek Unggulan</div>
-              <svg className="featured-icon" viewBox="0 0 96 96" fill="none">
-                <circle cx="48" cy="48" r="40" stroke="currentColor" strokeWidth="1.5" fill="rgba(197,151,58,0.05)"/>
-                <circle cx="48" cy="48" r="12" fill="rgba(197,151,58,0.2)"/>
-                <line x1="48" y1="8" x2="48" y2="36" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                <line x1="59" y1="55" x2="82" y2="69" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                <line x1="37" y1="55" x2="14" y2="69" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
             </div>
             <div className="featured-body">
               <div className="featured-client">{featuredProject.client}</div>

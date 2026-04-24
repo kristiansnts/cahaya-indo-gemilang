@@ -2,12 +2,13 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import PageHero from '@/components/PageHero';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const missionVision: Array<{ number: string; title: string; body: string; dark?: boolean }> = [
   {
     number: '01',
     title: 'Visi Kami',
-    body: 'Menjadi perusahaan pengelola limbah B3 dan TENORM/MIR terpercaya dan terdepan di Indonesia yang ⁠berwawasan Keselamatan Lingkungan, Keselamatan Radiasi, Keamanan Radioaktif, berteknologi tinggi dst tetap.',
+    body: 'Menjadi perusahaan pengelola limbah B3 dan TENORM/MIR terpercaya dan terdepan di Indonesia yang ⁠berwawasan Keselamatan Lingkungan, Keselamatan Radiasi, Keamanan Radioaktif, berteknologi tinggi serta menjadi mitra strategis industri migas dan minerba nasional.',
   },
   {
     number: '02',
@@ -78,8 +79,14 @@ export default function TentangKami() {
         <div className="container">
           <div className="about-intro">
             <div className="about-img-stack fade-up">
-              <div className="about-img-main">
-                <div className="about-silhouette"></div>
+              <div className="about-img-main" style={{ position: 'relative', overflow: 'hidden' }}>
+                <Image
+                  src="/images/tentang-kami.png"
+                  alt="Fasilitas Unit Pengelola TENORM Terintegrasi PT Cahaya Indo Gemilang"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                />
               </div>
               <div className="about-accent-bar"></div>
               <div className="about-director-card">
@@ -136,24 +143,24 @@ export default function TentangKami() {
                 <svg className="value-icon" viewBox="0 0 44 44" fill="none">
                   {idx === 0 && (
                     <>
-                      <path d="M22 4L6 11v12c0 10.5 6.8 20.3 16 23 9.2-2.7 16-12.5 16-23V11L22 4z" stroke="currentColor" strokeWidth="1.5" fill="rgba(197,151,58,0.08)"/>
-                      <path d="M15 22l5 5 9-9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M22 4L6 11v12c0 10.5 6.8 20.3 16 23 9.2-2.7 16-12.5 16-23V11L22 4z" stroke="currentColor" strokeWidth="1.5" fill="rgba(197,151,58,0.08)" />
+                      <path d="M15 22l5 5 9-9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </>
                   )}
                   {idx === 1 && (
                     <>
-                      <circle cx="22" cy="22" r="16" stroke="currentColor" strokeWidth="1.5" fill="rgba(197,151,58,0.08)"/>
-                      <circle cx="22" cy="22" r="5" fill="rgba(197,151,58,0.3)"/>
-                      <line x1="22" y1="6" x2="22" y2="17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                      <line x1="27" y1="25" x2="36.7" y2="31" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                      <line x1="17" y1="25" x2="7.3" y2="31" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                      <circle cx="22" cy="22" r="16" stroke="currentColor" strokeWidth="1.5" fill="rgba(197,151,58,0.08)" />
+                      <circle cx="22" cy="22" r="5" fill="rgba(197,151,58,0.3)" />
+                      <line x1="22" y1="6" x2="22" y2="17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <line x1="27" y1="25" x2="36.7" y2="31" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <line x1="17" y1="25" x2="7.3" y2="31" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     </>
                   )}
                   {idx === 2 && (
                     <>
-                      <path d="M22 6C12.6 6 5 13.6 5 23s7.6 17 17 17 17-7.6 17-17S31.4 6 22 6z" stroke="currentColor" strokeWidth="1.5" fill="rgba(197,151,58,0.08)"/>
-                      <path d="M15 28c1.2-5 3.7-8.5 7-11 3.3 2.5 5.8 6 7 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                      <path d="M16 17c0 3.3 2.7 6 6 6s6-2.7 6-6" stroke="currentColor" strokeWidth="1.5"/>
+                      <path d="M22 6C12.6 6 5 13.6 5 23s7.6 17 17 17 17-7.6 17-17S31.4 6 22 6z" stroke="currentColor" strokeWidth="1.5" fill="rgba(197,151,58,0.08)" />
+                      <path d="M15 28c1.2-5 3.7-8.5 7-11 3.3 2.5 5.8 6 7 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      <path d="M16 17c0 3.3 2.7 6 6 6s6-2.7 6-6" stroke="currentColor" strokeWidth="1.5" />
                     </>
                   )}
                 </svg>

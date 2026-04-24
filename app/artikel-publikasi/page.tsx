@@ -33,15 +33,13 @@ export default function ArtikelPublikasi() {
             <h2 className="section-heading">Bacaan Terkini</h2>
           </div>
           <div className="featured-article fade-up">
-            <div className="featured-article-thumb">
-              <div className="featured-article-thumb-grid"></div>
+            <div className="featured-article-thumb" style={{ padding: 0, overflow: 'hidden' }}>
+              <img 
+                src="/images/artikel-utama-regulasi.png" 
+                alt={featuredArticle.title} 
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
               <div className="featured-label">Artikel Utama</div>
-              <svg className="featured-article-icon" viewBox="0 0 80 80" fill="none">
-                <rect x="10" y="10" width="60" height="60" rx="4" stroke="currentColor" strokeWidth="1.5" fill="rgba(197,151,58,0.05)"/>
-                <line x1="22" y1="28" x2="58" y2="28" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                <line x1="22" y1="38" x2="58" y2="38" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-                <line x1="22" y1="48" x2="44" y2="48" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
-              </svg>
             </div>
             <div className="featured-article-body">
               <div className="article-category">{featuredArticle.category}</div>
