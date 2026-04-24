@@ -22,7 +22,7 @@ export default function Contact() {
               <div className={styles.itemIcon}>📞</div>
               <div>
                 <h5>Hotline Layanan</h5>
-                <p>+62878-9076-0055</p>
+                <p>08139869311</p>
               </div>
             </div>
             <div className={styles.contactItem}>
