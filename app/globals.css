@@ -545,4 +545,5 @@ body { font-family: var(--sans); color: var(--gray-900); background: var(--white
   .form-grid-2 { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr 1fr; }
   .about-director-card { right: 0; }
+  .nav-logo-name { font-size: 11px; max-width: 120px; white-space: normal; line-height: 1.3; }
 }
