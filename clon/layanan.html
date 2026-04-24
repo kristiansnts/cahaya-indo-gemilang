@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Layanan – PT Cahaya Indo Gemilang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .services-overview { display: flex; flex-direction: column; gap: 2px; background: var(--gray-100); }
+  .service-row {
+    display: grid; grid-template-columns: 80px 1fr 1.6fr; gap: 0;
+    background: var(--white); transition: background 0.2s;
+  }
+  .service-row:hover { background: var(--gray-50); }
+  .service-num-col { background: var(--navy); display: flex; align-items: center; justify-content: center; padding: 40px 0; }
+  .service-num-col span { font-family: var(--serif); font-size: 32px; font-weight: 600; color: rgba(197,151,58,0.4); writing-mode: vertical-rl; }
+  .service-label-col { padding: 40px 36px; border-right: 1px solid var(--gray-100); display: flex; flex-direction: column; justify-content: center; }
+  .service-detail-col { padding: 40px 48px; }
+
+  .svc-badge { display: inline-block; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; background: var(--gold); color: var(--navy); font-weight: 700; padding: 3px 8px; margin-bottom: 12px; }
+  .svc-name { font-family: var(--serif); font-size: 26px; font-weight: 600; color: var(--navy); line-height: 1.2; margin-bottom: 8px; }
+  .svc-tag { font-size: 11px; color: var(--gold); letter-spacing: 1px; font-weight: 600; text-transform: uppercase; }
+  .svc-desc { font-size: 15px; color: var(--gray-500); line-height: 1.75; margin-bottom: 24px; }
+  .svc-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; }
+  .svc-list li { font-size: 13.5px; color: var(--gray-700); padding-left: 16px; position: relative; }
+  .svc-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+
+  /* PROCESS */
+  .process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; margin-top: 56px; }
+  .process-grid::before { content:''; position:absolute; top: 36px; left: 10%; right: 10%; height: 1px; background: var(--gray-200); z-index: 0; }
+  .process-step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+  .process-circle { width: 72px; height: 72px; border-radius: 50%; background: var(--white); border: 1.5px solid var(--gray-200); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; transition: all 0.3s; }
+  .process-step:hover .process-circle { border-color: var(--gold); background: var(--gold-pale); }
+  .process-icon { width: 28px; height: 28px; color: var(--navy); }
+  .process-label { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+  .process-desc { font-size: 12px; color: var(--gray-500); line-height: 1.5; }
+
+  /* COMPLIANCE */
+  .compliance-row { display: flex; align-items: center; gap: 48px; padding: 48px; background: var(--navy); margin-top: 64px; }
+  .compliance-text h3 { font-family: var(--serif); font-size: 28px; font-weight: 600; color: var(--white); margin-bottom: 8px; }
+  .compliance-text p { font-size: 14px; color: rgba(255,255,255,0.5); }
+  .compliance-badges { display: flex; gap: 16px; flex-wrap: wrap; margin-left: auto; }
+  .comp-badge { border: 1.5px solid rgba(197,151,58,0.4); padding: 12px 20px; text-align: center; }
+  .comp-badge-name { font-size: 15px; font-weight: 700; color: var(--gold-light); letter-spacing: 1px; }
+  .comp-badge-desc { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 0.5px; margin-top: 3px; white-space: nowrap; }
+
+  /* CTA */
+  .cta-band { background: var(--gold-pale); border: 1px solid rgba(197,151,58,0.2); padding: 56px 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 64px; flex-wrap: wrap; }
+  .cta-band h3 { font-family: var(--serif); font-size: 32px; font-weight: 600; color: var(--navy); max-width: 480px; }
+  .cta-band p { font-size: 15px; color: var(--gray-500); margin-top: 8px; }
+
+  @media (max-width: 1024px) {
+    .service-row { grid-template-columns: 60px 1fr; }
+    .service-detail-col { grid-column: 1 / -1; padding: 0 36px 40px; border-top: 1px solid var(--gray-100); }
+    .process-grid { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .process-grid::before { display: none; }
+    .compliance-row { flex-direction: column; align-items: flex-start; }
+    .compliance-badges { margin-left: 0; }
+  }
+  @media (max-width: 640px) {
+    .service-row { grid-template-columns: 1fr; }
+    .service-num-col { display: none; }
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .svc-list { grid-template-columns: 1fr; }
+    .cta-band { padding: 40px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark">CIG</div>
+        <div class="nav-logo-text">
+          <strong>Cahaya Indo Gemilang</strong>
+          <span>HSE Terintegrasi Radiasi</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="tentang-kami.html">Tentang Kami</a></li>
+        <li><a href="layanan.html" class="active">Layanan</a></li>
+        <li><a href="proyek-portofolio.html">Proyek &amp; Portofolio</a></li>
+        <li><a href="artikel-publikasi.html">Artikel &amp; Publikasi</a></li>
+        <li><a href="hubungi-kami.html">Hubungi Kami</a></li>
+      </ul>
+      <a href="hubungi-kami.html" class="nav-cta">Ajukan Survey</a>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-line"></div>
+  <div class="container page-hero-content">
+    <div class="page-eyebrow">Apa yang Kami Tawarkan</div>
+    <h1 class="page-title">Layanan <em>Profesional</em></h1>
+    <p class="page-desc">Solusi terintegrasi untuk pengelolaan limbah B3, TENORM, konsultansi HSE, dan pengembangan teknologi industri.</p>
+  </div>
+</div>
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Beranda</a>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      <span>Layanan</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES LIST -->
+<section class="section">
+  <div class="container">
+    <div class="fade-up" style="margin-bottom:48px;">
+      <div class="section-eyebrow">Layanan Kami</div>
+      <h2 class="section-heading">Solusi Terintegrasi Untuk Industri</h2>
+      <p class="section-sub">Setiap layanan dirancang untuk memenuhi kebutuhan spesifik industri migas dan minerba dengan standar keselamatan tertinggi.</p>
+    </div>
+    <div class="services-overview fade-up">
+      <!-- Service 1 -->
+      <div class="service-row">
+        <div class="service-num-col"><span>01</span></div>
+        <div class="service-label-col">
+          <div class="svc-name">Pengelolaan Limbah B3</div>
+          <div class="svc-tag">Waste Management</div>
+        </div>
+        <div class="service-detail-col">
+          <p class="svc-desc">Layanan komprehensif untuk identifikasi, pengumpulan, penyimpanan sementara, pengangkutan, dan pengolahan limbah Bahan Berbahaya dan Beracun (B3) industri sesuai regulasi Kementerian Lingkungan Hidup.</p>
+          <ul class="svc-list">
+            <li>Identifikasi &amp; Karakterisasi Limbah</li>
+            <li>Penyimpanan Sementara Aman</li>
+            <li>Transportasi &amp; Manifes Limbah</li>
+            <li>Pengolahan &amp; Pemusnahan</li>
+            <li>Dokumentasi Kepatuhan KLH</li>
+            <li>Pelaporan Berkala</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Service 2 -->
+      <div class="service-row">
+        <div class="service-num-col"><span>02</span></div>
+        <div class="service-label-col">
+          <div class="svc-badge">Unggulan</div>
+          <div class="svc-name">Pengelolaan TENORM</div>
+          <div class="svc-tag">Radiation Safety</div>
+        </div>
+        <div class="service-detail-col">
+          <p class="svc-desc">Survei radiasi lapangan, pemetaan hotspot radioaktif, dan penanganan limbah TENORM (Technologically Enhanced Naturally Occurring Radioactive Materials) untuk industri migas dan minerba sesuai izin BAPETEN.</p>
+          <ul class="svc-list">
+            <li>Survei Radiasi Lapangan</li>
+            <li>Pemetaan &amp; Hotspot Mapping</li>
+            <li>Pengambilan Sampel NORM/TENORM</li>
+            <li>Analisis Laboratorium</li>
+            <li>Dekontaminasi Area &amp; Peralatan</li>
+            <li>Pengelolaan Akhir Limbah Radioaktif</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Service 3 -->
+      <div class="service-row">
+        <div class="service-num-col"><span>03</span></div>
+        <div class="service-label-col">
+          <div class="svc-name">Konsultansi K3L/HSE</div>
+          <div class="svc-tag">HSE Consulting</div>
+        </div>
+        <div class="service-detail-col">
+          <p class="svc-desc">Penyusunan dokumen HSE terintegrasi, identifikasi bahaya dan penilaian risiko (HIRADC), serta audit keselamatan kerja yang komprehensif untuk memastikan kepatuhan dan perlindungan tenaga kerja.</p>
+          <ul class="svc-list">
+            <li>Penyusunan Dokumen HSE Plan</li>
+            <li>HIRADC &amp; Risk Assessment</li>
+            <li>Audit Keselamatan Kerja</li>
+            <li>Pelatihan &amp; Simulasi K3</li>
+            <li>Investigasi Kecelakaan</li>
+            <li>Laporan Kepatuhan Regulasi</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Service 4 -->
+      <div class="service-row">
+        <div class="service-num-col"><span>04</span></div>
+        <div class="service-label-col">
+          <div class="svc-name">Pengembangan Teknologi</div>
+          <div class="svc-tag">Technology Solutions</div>
+        </div>
+        <div class="service-detail-col">
+          <p class="svc-desc">Penyediaan dan implementasi sistem monitoring paparan radiasi real-time, serta pengembangan teknologi pengolahan limbah berkelanjutan yang disesuaikan dengan kebutuhan spesifik fasilitas industri.</p>
+          <ul class="svc-list">
+            <li>Sistem Monitoring Radiasi</li>
+            <li>Perangkat Detektor Portabel</li>
+            <li>Dashboard Pemantauan Real-Time</li>
+            <li>Kalibrasi Instrumen</li>
+            <li>Teknologi Pengolahan Inovatif</li>
+            <li>Integrasi Sistem SCADA/DCS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section style="background: var(--gray-50); padding: 80px 0;">
+  <div class="container">
+    <div class="fade-up" style="text-align:center; max-width:500px; margin: 0 auto 0;">
+      <div class="section-eyebrow" style="justify-content:center;">Cara Kerja Kami</div>
+      <h2 class="section-heading">Proses Layanan</h2>
+    </div>
+    <div class="process-grid fade-up">
+      <div class="process-step">
+        <div class="process-circle">
+          <svg class="process-icon" viewBox="0 0 28 28" fill="none"><rect x="4" y="4" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M9 14h10M14 9v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="process-label">Konsultasi Awal</div>
+        <div class="process-desc">Diskusi kebutuhan dan ruang lingkup pekerjaan</div>
+      </div>
+      <div class="process-step">
+        <div class="process-circle">
+          <svg class="process-icon" viewBox="0 0 28 28" fill="none"><path d="M14 4L4 9v7c0 6.07 4.27 11.74 10 13 5.73-1.26 10-6.93 10-13V9L14 4z" stroke="currentColor" stroke-width="1.5"/><path d="M10 14l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="process-label">Survei Lapangan</div>
+        <div class="process-desc">Inspeksi lokasi dan pengambilan data awal</div>
+      </div>
+      <div class="process-step">
+        <div class="process-circle">
+          <svg class="process-icon" viewBox="0 0 28 28" fill="none"><rect x="4" y="4" width="20" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M9 10h10M9 14h10M9 18h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="process-label">Perencanaan</div>
+        <div class="process-desc">Penyusunan rencana kerja dan anggaran</div>
+      </div>
+      <div class="process-step">
+        <div class="process-circle">
+          <svg class="process-icon" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M14 8v7l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="process-label">Pelaksanaan</div>
+        <div class="process-desc">Implementasi layanan sesuai standar K3L</div>
+      </div>
+      <div class="process-step">
+        <div class="process-circle">
+          <svg class="process-icon" viewBox="0 0 28 28" fill="none"><path d="M4 14l7 7L24 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="process-label">Pelaporan</div>
+        <div class="process-desc">Dokumentasi lengkap dan laporan kepatuhan</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="section">
+  <div class="container fade-up">
+    <div class="compliance-row">
+      <div class="compliance-text">
+        <h3>Beroperasi Sesuai Regulasi Nasional</h3>
+        <p>Semua layanan kami dijalankan berdasarkan izin dan sertifikasi resmi dari lembaga pengawas terkait.</p>
+      </div>
+      <div class="compliance-badges">
+        <div class="comp-badge"><div class="comp-badge-name">KLH</div><div class="comp-badge-desc">Kementerian Lingkungan Hidup</div></div>
+        <div class="comp-badge"><div class="comp-badge-name">BAPETEN</div><div class="comp-badge-desc">Pengawas Tenaga Nuklir</div></div>
+        <div class="comp-badge"><div class="comp-badge-name">SKK Migas</div><div class="comp-badge-desc">Satuan Kerja Khusus</div></div>
+        <div class="comp-badge"><div class="comp-badge-name">ISO HSE</div><div class="comp-badge-desc">Standar Keselamatan Kerja</div></div>
+      </div>
+    </div>
+    <div class="cta-band">
+      <div>
+        <h3>Siap Memulai Proyek Anda?</h3>
+        <p>Tim ahli kami siap memberikan konsultasi gratis dan proposal layanan yang sesuai dengan kebutuhan Anda.</p>
+      </div>
+      <a href="hubungi-kami.html" class="btn-primary" style="white-space:nowrap;">Ajukan Permintaan Survey</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Cahaya Indo Gemilang</div>
+        <div class="footer-brand-sub">HSE Terintegrasi Radiasi</div>
+        <p class="footer-brand-bio">Solusi pengelolaan limbah B3 dan TENORM untuk industri Migas &amp; Minerba. Berkomitmen pada keselamatan kerja dan kelestarian lingkungan Indonesia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang-kami.html">Tentang Kami</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="proyek-portofolio.html">Proyek &amp; Portofolio</a></li>
+          <li><a href="artikel-publikasi.html">Artikel &amp; Publikasi</a></li>
+          <li><a href="hubungi-kami.html">Hubungi Kami</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="layanan.html">Pengelolaan Limbah B3</a></li>
+          <li><a href="layanan.html">Pengelolaan TENORM</a></li>
+          <li><a href="layanan.html">Konsultansi K3L/HSE</a></li>
+          <li><a href="layanan.html">Pengembangan Teknologi</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legalitas</h4>
+        <div class="footer-cert-badges">
+          <span class="footer-cert">KLH</span><span class="footer-cert">BAPETEN</span>
+          <span class="footer-cert">SKK Migas</span><span class="footer-cert">ISO HSE</span>
+        </div>
+        <p class="footer-cert-desc">Beroperasi sesuai standar regulasi nasional.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 PT Cahaya Indo Gemilang. All rights reserved.</div>
+      <div class="footer-reg">Kompartemen Pengelola HSE Terintegrasi Radiasi</div>
+    </div>
+  </div>
+</footer>
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => { if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), i * 80); observer.unobserve(entry.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

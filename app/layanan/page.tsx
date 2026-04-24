@@ -1,182 +1,203 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import PageHero from '@/components/PageHero';
-import styles from './page.module.css';
+import Link from 'next/link';
+
+const services: Array<{
+  number: string;
+  name: string;
+  tag: string;
+  desc: string;
+  badge?: string;
+  items: string[];
+}> = [
+  {
+    number: '01',
+    name: 'Pengelolaan Limbah B3',
+    tag: 'Waste Management',
+    desc: 'Layanan komprehensif untuk identifikasi, pengumpulan, penyimpanan sementara, pengangkutan, dan pengolahan limbah Bahan Berbahaya dan Beracun (B3) industri sesuai regulasi Kementerian Lingkungan Hidup.',
+    items: [
+      'Identifikasi & Karakterisasi Limbah',
+      'Penyimpanan Sementara Aman',
+      'Transportasi & Manifes Limbah',
+      'Pengolahan & Pemusnahan',
+      'Dokumentasi Kepatuhan KLH',
+      'Pelaporan Berkala',
+    ],
+  },
+  {
+    number: '02',
+    name: 'Pengelolaan TENORM',
+    tag: 'Radiation Safety',
+    badge: 'Unggulan',
+    desc: 'Survei radiasi lapangan, pemetaan hotspot radioaktif, dan penanganan limbah TENORM (Technologically Enhanced Naturally Occurring Radioactive Materials) untuk industri migas dan minerba sesuai izin BAPETEN.',
+    items: [
+      'Survei Radiasi Lapangan',
+      'Pemetaan & Hotspot Mapping',
+      'Pengambilan Sampel NORM/TENORM',
+      'Analisis Laboratorium',
+      'Dekontaminasi Area & Peralatan',
+      'Pengelolaan Akhir Limbah Radioaktif',
+    ],
+  },
+  {
+    number: '03',
+    name: 'Konsultansi K3L/HSE',
+    tag: 'HSE Consulting',
+    desc: 'Penyusunan dokumen HSE terintegrasi, identifikasi bahaya dan penilaian risiko (HIRADC), serta audit keselamatan kerja yang komprehensif untuk memastikan kepatuhan dan perlindungan tenaga kerja.',
+    items: [
+      'Penyusunan Dokumen HSE Plan',
+      'HIRADC & Risk Assessment',
+      'Audit Keselamatan Kerja',
+      'Pelatihan & Simulasi K3',
+      'Investigasi Kecelakaan',
+      'Laporan Kepatuhan Regulasi',
+    ],
+  },
+  {
+    number: '04',
+    name: 'Pengembangan Teknologi',
+    tag: 'Technology Solutions',
+    desc: 'Penyediaan dan implementasi sistem monitoring paparan radiasi real-time, serta pengembangan teknologi pengolahan limbah berkelanjutan yang disesuaikan dengan kebutuhan spesifik fasilitas industri.',
+    items: [
+      'Sistem Monitoring Radiasi',
+      'Perangkat Detektor Portabel',
+      'Dashboard Pemantauan Real-Time',
+      'Kalibrasi Instrumen',
+      'Teknologi Pengolahan Inovatif',
+      'Integrasi Sistem SCADA/DCS',
+    ],
+  },
+];
+
+const processSteps = [
+  { label: 'Konsultasi Awal', desc: 'Diskusi kebutuhan dan ruang lingkup pekerjaan' },
+  { label: 'Survei Lapangan', desc: 'Inspeksi lokasi dan pengambilan data awal' },
+  { label: 'Perencanaan', desc: 'Penyusunan rencana kerja dan anggaran' },
+  { label: 'Pelaksanaan', desc: 'Implementasi layanan sesuai standar K3L' },
+  { label: 'Pelaporan', desc: 'Dokumentasi lengkap dan laporan kepatuhan' },
+] as const;
+
+const complianceBadges = [
+  ['KLH', 'Kementerian Lingkungan Hidup'],
+  ['BAPETEN', 'Pengawas Tenaga Nuklir'],
+  ['SKK Migas', 'Satuan Kerja Khusus'],
+  ['ISO HSE', 'Standar Keselamatan Kerja'],
+] as const;
 
 export default function Layanan() {
-  const b3Features = [
-    'Identifikasi & Karakterisasi Limbah Industri',
-    'Transportasi & Penyimpanan Sementara (TPS)',
-    'Penyusunan Sistem Manajemen Lingkungan'
-  ];
-
-  const tenormServices = [
-    {
-      title: 'Survei & Mapping',
-      desc: 'Pemetaan Hotspot radiasi area kerja secara akurat.'
-    },
-    {
-      title: 'Sampling',
-      desc: 'Karakterisasi laboratorium TENORM untuk analisis mendalam.'
-    },
-    {
-      title: 'SOP Khusus',
-      desc: 'Penyusunan prosedur keselamatan migas yang komprehensif.'
-    },
-    {
-      title: 'Pembinaan',
-      desc: 'Pelatihan keselamatan radiasi untuk SDM perusahaan.'
-    }
-  ];
-
-  const hseFeatures = [
-    'Risk assessment & risk mitigation.',
-    'Penyusunan dokumen K3LL berbasis regulasi BAPETEN, KLH, ESDM.',
-    'Evaluasi keselamatan sumber radiasi.'
-  ];
-
-  const trainingServices = [
-    {
-      title: 'Sertifikasi PPR',
-      desc: 'Program pelatihan untuk Petugas Proteksi Radiasi sesuai standar BAPETEN.'
-    },
-    {
-      title: 'Safety Culture',
-      desc: 'In-house training untuk membangun budaya keselamatan kerja.'
-    },
-    {
-      title: 'Teknologi & Riset',
-      desc: 'Pengembangan sistem monitoring dan kajian pengolahan limbah terkini.'
-    }
-  ];
-
   return (
-    <main>
+    <>
       <Navbar />
-      <PageHero 
-        title="Layanan Kami" 
-        subtitle="Solusi komprehensif pengelolaan limbah B3, mitigasi TENORM, dan konsultansi keselamatan radiasi"
-      />
-      
-      {/* Pengelolaan Limbah B3 */}
-      <section className={styles.section}>
-        <div className="container">
-          <div className={styles.sectionHeader}>
-            <span className={styles.categoryBadge}>SOLUSI INDUSTRI</span>
-            <h2 className={styles.sectionTitle}>Pengelolaan Limbah B3</h2>
-            <p className={styles.serviceCardDesc} style={{ fontSize: '1.1rem', marginTop: '15px' }}>
-              Kami menyediakan layanan menyeluruh untuk identifikasi, pengelolaan, dan pemrosesan limbah Bahan Berbahaya dan Beracun (B3) industri. Proses kami menjamin keamanan lingkungan dan kepatuhan penuh terhadap regulasi KLH.
-            </p>
-          </div>
-          
-          <div className={styles.serviceGrid}>
-            <div className={styles.serviceCard}>
-              <div className={styles.iconWrapper}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-              </div>
-              <h3 className={styles.serviceCardTitle}>Cakupan Layanan B3</h3>
-              <ul className={styles.featureList}>
-                {b3Features.map((feature, i) => (
-                  <li key={i} className={styles.featureItem}>
-                    <svg className={styles.checkIcon} width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
 
-            <div className={styles.serviceCard}>
-              <div className={styles.iconWrapper}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              </div>
-              <h3 className={styles.serviceCardTitle}>Keamanan & Kepatuhan</h3>
-              <p className={styles.serviceCardDesc}>
-                Setiap proses yang kami jalankan didasarkan pada standar operasional prosedur yang ketat untuk memastikan tidak ada dampak negatif terhadap ekosistem sekitar dan kesehatan pekerja.
-              </p>
-            </div>
+      <div className="page-hero">
+        <div className="page-hero-bg"></div>
+        <div className="page-hero-grid"></div>
+        <div className="page-hero-line"></div>
+        <div className="container page-hero-content">
+          <div className="page-eyebrow">Apa yang Kami Tawarkan</div>
+          <h1 className="page-title">Layanan <em>Profesional</em></h1>
+          <p className="page-desc">Solusi terintegrasi untuk pengelolaan limbah B3, TENORM, konsultansi HSE, dan pengembangan teknologi industri.</p>
+        </div>
+      </div>
+      <div className="breadcrumb">
+        <div className="container">
+          <div className="breadcrumb-inner">
+            <Link href="/">Beranda</Link>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+            <span>Layanan</span>
           </div>
         </div>
-      </section>
+      </div>
 
-      {/* TENORM Section */}
-      <section className={`${styles.section} ${styles.altBg}`}>
+      {/* SERVICES LIST */}
+      <section className="section">
         <div className="container">
-          <div className={styles.sectionHeaderCenter}>
-            <span className={styles.categoryBadge}>KEAHLIAN KHUSUS</span>
-            <h2 className={styles.sectionTitle}>Pengelolaan Limbah TENORM</h2>
-            <p className={styles.serviceCardDesc} style={{ marginTop: '20px' }}>
-              Solusi khusus untuk Technologically Enhanced Naturally Occurring Radioactive Material. Kami membantu industri migas dan minerba dalam survei, pemetaan, dan mitigasi risiko radiasi.
-            </p>
+          <div className="fade-up" style={{ marginBottom: 48 }}>
+            <div className="section-eyebrow">Layanan Kami</div>
+            <h2 className="section-heading">Solusi Terintegrasi Untuk Industri</h2>
+            <p className="section-sub">Setiap layanan dirancang untuk memenuhi kebutuhan spesifik industri migas dan minerba dengan standar keselamatan tertinggi.</p>
           </div>
-          
-          <div className={styles.tenormGrid}>
-            {tenormServices.map((service, i) => (
-              <div key={i} className={styles.tenormSubCard}>
-                <h4 className={styles.tenormSubTitle}>{service.title}</h4>
-                <p className={styles.tenormSubDesc}>{service.desc}</p>
+          <div className="services-overview fade-up">
+            {services.map(service => (
+              <div key={service.number} className="service-row">
+                <div className="service-num-col"><span>{service.number}</span></div>
+                <div className="service-label-col">
+                  {service.badge && <div className="svc-badge">{service.badge}</div>}
+                  <div className="svc-name">{service.name}</div>
+                  <div className="svc-tag">{service.tag}</div>
+                </div>
+                <div className="service-detail-col">
+                  <p className="svc-desc">{service.desc}</p>
+                  <ul className="svc-list">
+                    {service.items.map(item => <li key={item}>{item}</li>)}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* HSE & Training Section */}
-      <section className={styles.section}>
+      {/* PROCESS */}
+      <section style={{ background: 'var(--gray-50)', padding: '80px 0' }}>
         <div className="container">
-          <div className={styles.serviceGrid}>
-            <div className={styles.serviceCard}>
-              <div className={styles.iconWrapper}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+          <div className="fade-up" style={{ textAlign: 'center', maxWidth: 500, margin: '0 auto 0' }}>
+            <div className="section-eyebrow" style={{ justifyContent: 'center' }}>Cara Kerja Kami</div>
+            <h2 className="section-heading">Proses Layanan</h2>
+          </div>
+          <div className="process-grid fade-up">
+            {processSteps.map((step, idx) => (
+              <div key={step.label} className="process-step">
+                <div className="process-circle">
+                  {idx === 0 && (
+                    <svg className="process-icon" viewBox="0 0 28 28" fill="none"><rect x="4" y="4" width="20" height="20" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M9 14h10M14 9v10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                  )}
+                  {idx === 1 && (
+                    <svg className="process-icon" viewBox="0 0 28 28" fill="none"><path d="M14 4L4 9v7c0 6.07 4.27 11.74 10 13 5.73-1.26 10-6.93 10-13V9L14 4z" stroke="currentColor" strokeWidth="1.5"/><path d="M10 14l3 3 5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  )}
+                  {idx === 2 && (
+                    <svg className="process-icon" viewBox="0 0 28 28" fill="none"><rect x="4" y="4" width="20" height="20" rx="2" stroke="currentColor" strokeWidth="1.5"/><path d="M9 10h10M9 14h10M9 18h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                  )}
+                  {idx === 3 && (
+                    <svg className="process-icon" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="10" stroke="currentColor" strokeWidth="1.5"/><path d="M14 8v7l4 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  )}
+                  {idx === 4 && (
+                    <svg className="process-icon" viewBox="0 0 28 28" fill="none"><path d="M4 14l7 7L24 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                  )}
+                </div>
+                <div className="process-label">{step.label}</div>
+                <div className="process-desc">{step.desc}</div>
               </div>
-              <h3 className={styles.serviceCardTitle}>Konsultansi K3L / HSE</h3>
-              <p className={styles.serviceCardDesc}>
-                Kami membantu perusahaan Anda memenuhi standar kepatuhan regulasi BAPETEN, KLH, dan ESDM melalui kajian teknis mendalam.
-              </p>
-              <ul className={styles.featureList}>
-                {hseFeatures.map((feature, i) => (
-                  <li key={i} className={styles.featureItem}>
-                    <svg className={styles.checkIcon} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className={styles.serviceCard}>
-              <div className={styles.iconWrapper}>
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10v6M6 4h12l2 6H4l2-6zM4 10h16v11H4V10z"></path></svg>
-              </div>
-              <h3 className={styles.serviceCardTitle}>Pelatihan & Sertifikasi</h3>
-              <p className={styles.serviceCardDesc}>
-                Membangun SDM kompeten dan budaya keselamatan yang kuat di lingkungan kerja berisiko tinggi.
-              </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginTop: '10px' }}>
-                {trainingServices.map((service, i) => (
-                  <div key={i}>
-                    <h5 style={{ margin: '0 0 5px 0', fontSize: '1rem', color: '#1a202c' }}>{service.title}</h5>
-                    <p style={{ margin: 0, fontSize: '0.85rem', color: '#718096' }}>{service.desc}</p>
-                  </div>
-                ))}
-              </div>
+      {/* COMPLIANCE + CTA */}
+      <section className="section">
+        <div className="container fade-up">
+          <div className="compliance-row">
+            <div className="compliance-text">
+              <h3>Beroperasi Sesuai Regulasi Nasional</h3>
+              <p>Semua layanan kami dijalankan berdasarkan izin dan sertifikasi resmi dari lembaga pengawas terkait.</p>
+            </div>
+            <div className="compliance-badges">
+              {complianceBadges.map(([name, desc]) => (
+                <div key={name} className="comp-badge"><div className="comp-badge-name">{name}</div><div className="comp-badge-desc">{desc}</div></div>
+              ))}
             </div>
           </div>
-          
-          <div className={styles.ctaSection}>
-            <div className="container">
-              <h2 className={styles.ctaTitle}>Butuh Proposal Penawaran Lengkap?</h2>
-              <p className={styles.ctaDesc}>
-                Konsultasikan kebutuhan pengelolaan limbah dan keselamatan radiasi perusahaan Anda dengan tim ahli kami.
-              </p>
-              <a href="http://wa.me/6287890760055" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                Hubungi Tim Ahli Kami
-              </a>
+          <div className="cta-band">
+            <div>
+              <h3>Siap Memulai Proyek Anda?</h3>
+              <p>Tim ahli kami siap memberikan konsultasi gratis dan proposal layanan yang sesuai dengan kebutuhan Anda.</p>
             </div>
+            <Link href="/hubungi-kami" className="btn-primary" style={{ whiteSpace: 'nowrap' }}>Ajukan Permintaan Survey</Link>
           </div>
         </div>
       </section>
 
       <Footer />
-    </main>
+    </>
   );
 }

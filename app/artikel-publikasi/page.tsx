@@ -1,119 +1,83 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import PageHero from '@/components/PageHero';
-import styles from './page.module.css';
+import ArtikelGrid from '@/components/ArtikelGrid';
+import Link from 'next/link';
+
+const featuredArticle = {
+  category: 'Regulasi & Kepatuhan',
+  title: 'Pemahaman Regulasi BAPETEN tentang Pengelolaan TENORM di Industri Migas Indonesia',
+  excerpt: 'Panduan komprehensif mengenai kerangka regulasi BAPETEN yang mengatur pengelolaan Technologically Enhanced Naturally Occurring Radioactive Materials (TENORM) — mencakup persyaratan izin, prosedur survei, dan standar pembuangan yang wajib dipenuhi operator industri migas.',
+  author: 'Tim Ahli CIG',
+  date: 'Maret 2026',
+  readTime: '12 menit baca',
+} as const;
 
 export default function ArtikelPublikasi() {
-  const documents = [
-    {
-      type: 'PERATURAN PEMERINTAH',
-      title: 'PP No. 52 Tahun 2022',
-      description: 'Tentang Keselamatan dan Keamanan Pertambangan Bahan Galian Nuklir.',
-      category: 'Regulasi'
-    },
-    {
-      type: 'PERATURAN PEMERINTAH',
-      title: 'PP No. 22 Tahun 2021',
-      description: 'Tentang Penyelenggaraan Perlindungan dan Pengelolaan Lingkungan Hidup.',
-      category: 'Lingkungan'
-    }
-  ];
-
-  const articles = [
-    {
-      title: 'Mengenal Grafena Oksida',
-      excerpt: 'Inovasi material masa depan untuk pengelolaan limbah industri yang lebih efisien.',
-      date: '24 Apr 2024',
-      color: '#103822'
-    },
-    {
-      title: 'SPEED 2024',
-      excerpt: 'Partisipasi RRAD Jaya Abadi dalam pameran teknologi energi terbarukan.',
-      date: '15 Mar 2024',
-      color: '#ff8c00'
-    },
-    {
-      title: 'Kajian Regulasi TENORM',
-      excerpt: 'Update terbaru mengenai regulasi pengelolaan TENORM di industri migas Indonesia.',
-      date: '02 Feb 2024',
-      color: '#1a365d'
-    }
-  ];
-
   return (
-    <main>
+    <>
       <Navbar />
-      <PageHero 
-        title="Artikel & Publikasi" 
-        subtitle="Pusat informasi regulasi, edukasi TENORM, dan inovasi pengelolaan limbah B3"
-      />
-      
-      <section className={styles.section}>
+
+      <div className="page-hero">
+        <div className="page-hero-bg"></div>
+        <div className="page-hero-grid"></div>
+        <div className="page-hero-line"></div>
+        <div className="container page-hero-content">
+          <div className="page-eyebrow">Pengetahuan &amp; Wawasan</div>
+          <h1 className="page-title">Artikel &amp; <em>Publikasi</em></h1>
+          <p className="page-desc">Wawasan teknis, regulasi terkini, dan praktik terbaik di bidang pengelolaan limbah B3, TENORM, dan keselamatan radiasi industri.</p>
+        </div>
+      </div>
+      <div className="breadcrumb">
         <div className="container">
-          <div className={styles.sectionHeader}>
-            <div className={styles.headerLeft}>
-              <span className={styles.categoryBadge}>PUSTAKA DIGITAL</span>
-              <h2 className={styles.sectionTitle}>Regulasi & Dokumen Teknis</h2>
-            </div>
-            <div className={styles.headerRight}>
-              <button className={styles.downloadAllBtn}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                Tersedia untuk Diunduh
-              </button>
-            </div>
-          </div>
-          
-          <div className={styles.documentGrid}>
-            {documents.map((doc, index) => (
-              <div key={index} className={styles.documentCard}>
-                <div className={styles.docIcon}>
-                  <svg width="24" height="30" viewBox="0 0 24 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14 0H2C0.89 0 0 0.89 0 2V28C0 29.11 0.89 30 2 30H22C23.11 30 24 29.11 24 28V10L14 0Z" fill="#E53E3E"/>
-                    <path d="M14 0V10H24L14 0Z" fill="#C53030"/>
-                    <path d="M18 18H6V20H18V18Z" fill="white"/>
-                    <path d="M18 22H6V24H18V22Z" fill="white"/>
-                    <path d="M12 14H6V16H12V14Z" fill="white"/>
-                  </svg>
-                </div>
-                <div className={styles.docInfo}>
-                  <span className={styles.docType}>{doc.type}</span>
-                  <h3 className={styles.docTitle}>{doc.title}</h3>
-                  <p className={styles.docDesc}>{doc.description}</p>
-                </div>
-                <a href="#" className={styles.downloadLink}>Unduh PDF</a>
-              </div>
-            ))}
+          <div className="breadcrumb-inner">
+            <Link href="/">Beranda</Link>
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/></svg>
+            <span>Artikel &amp; Publikasi</span>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className={`${styles.section} ${styles.altBg}`}>
+      <section className="section">
         <div className="container">
-          <div className={styles.sectionHeaderCenter}>
-            <span className={styles.categoryBadge}>WAWASAN INDUSTRI</span>
-            <h2 className={styles.sectionTitle}>Edukasi & Berita Terbaru</h2>
+          {/* FEATURED */}
+          <div className="fade-up" style={{ marginBottom: 32 }}>
+            <div className="section-eyebrow">Artikel Pilihan</div>
+            <h2 className="section-heading">Bacaan Terkini</h2>
           </div>
-          
-          <div className={styles.articleGrid}>
-            {articles.map((article, index) => (
-              <div key={index} className={styles.articleCard}>
-                <div className={styles.articleImage} style={{ backgroundColor: article.color }}>
-                  <div className={styles.articleOverlay}>
-                    <span>{article.date}</span>
-                  </div>
-                </div>
-                <div className={styles.articleContent}>
-                  <h3 className={styles.articleTitle}>{article.title}</h3>
-                  <p className={styles.articleExcerpt}>{article.excerpt}</p>
-                  <a href="#" className={styles.readMore}>Selengkapnya →</a>
-                </div>
+          <div className="featured-article fade-up">
+            <div className="featured-article-thumb">
+              <div className="featured-article-thumb-grid"></div>
+              <div className="featured-label">Artikel Utama</div>
+              <svg className="featured-article-icon" viewBox="0 0 80 80" fill="none">
+                <rect x="10" y="10" width="60" height="60" rx="4" stroke="currentColor" strokeWidth="1.5" fill="rgba(197,151,58,0.05)"/>
+                <line x1="22" y1="28" x2="58" y2="28" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <line x1="22" y1="38" x2="58" y2="38" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <line x1="22" y1="48" x2="44" y2="48" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+            </div>
+            <div className="featured-article-body">
+              <div className="article-category">{featuredArticle.category}</div>
+              <div className="article-title">{featuredArticle.title}</div>
+              <div className="article-excerpt">{featuredArticle.excerpt}</div>
+              <div className="article-meta">
+                <span>{featuredArticle.author}</span>
+                <div className="article-meta-dot"></div>
+                <span>{featuredArticle.date}</span>
+                <div className="article-meta-dot"></div>
+                <span>{featuredArticle.readTime}</span>
               </div>
-            ))}
+              <a href="#" className="article-read-more" style={{ marginTop: 20 }}>
+                Baca Selengkapnya
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </a>
+            </div>
           </div>
+
+          <ArtikelGrid />
         </div>
       </section>
 
       <Footer />
-    </main>
+    </>
   );
 }

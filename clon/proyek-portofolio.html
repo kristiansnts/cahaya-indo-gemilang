@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proyek &amp; Portofolio – PT Cahaya Indo Gemilang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* FILTER TABS */
+  .filter-tabs { display: flex; gap: 4px; margin-bottom: 48px; flex-wrap: wrap; }
+  .filter-tab { padding: 10px 20px; font-size: 13px; font-weight: 500; color: var(--gray-500); border: 1px solid var(--gray-200); cursor: pointer; transition: all 0.2s; background: var(--white); }
+  .filter-tab:hover, .filter-tab.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+  /* PROJECT GRID */
+  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .project-card { border: 1px solid var(--gray-100); overflow: hidden; transition: all 0.3s; }
+  .project-card:hover { border-color: var(--gold); box-shadow: 0 12px 40px rgba(0,0,0,0.08); transform: translateY(-3px); }
+  .project-thumb {
+    aspect-ratio: 16/9; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+    display: flex; align-items: center; justify-content: center;
+  }
+  .project-thumb-pattern {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(197,151,58,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(197,151,58,0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .project-thumb-icon { width: 56px; height: 56px; color: rgba(197,151,58,0.35); position: relative; z-index: 1; }
+  .project-category { position: absolute; top: 14px; left: 14px; z-index: 2; font-size: 9px; letter-spacing: 2px; text-transform: uppercase; background: var(--gold); color: var(--navy); font-weight: 700; padding: 4px 10px; }
+  .project-body { padding: 24px; }
+  .project-client { font-size: 11px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+  .project-title { font-family: var(--serif); font-size: 22px; font-weight: 600; color: var(--navy); line-height: 1.2; margin-bottom: 10px; }
+  .project-desc { font-size: 13.5px; color: var(--gray-500); line-height: 1.65; margin-bottom: 20px; }
+  .project-meta { display: flex; gap: 20px; padding-top: 16px; border-top: 1px solid var(--gray-100); }
+  .project-meta-item { font-size: 12px; color: var(--gray-500); }
+  .project-meta-item strong { display: block; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: var(--navy); margin-bottom: 2px; font-weight: 600; }
+
+  /* FEATURED PROJECT */
+  .featured-project {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    background: var(--navy); margin-bottom: 64px;
+  }
+  .featured-visual {
+    background: linear-gradient(145deg, var(--navy-light), #0d2444);
+    display: flex; align-items: center; justify-content: center; padding: 64px; position: relative;
+    min-height: 400px;
+  }
+  .featured-visual-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(197,151,58,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(197,151,58,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .featured-icon { width: 96px; height: 96px; color: rgba(197,151,58,0.4); position: relative; z-index: 1; }
+  .featured-badge { position: absolute; top: 24px; left: 24px; background: var(--gold); color: var(--navy); font-size: 9px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; padding: 5px 12px; }
+  .featured-body { padding: 56px; display: flex; flex-direction: column; justify-content: center; }
+  .featured-client { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 14px; font-weight: 500; }
+  .featured-title { font-family: var(--serif); font-size: 32px; font-weight: 600; color: var(--white); line-height: 1.15; margin-bottom: 16px; }
+  .featured-desc { font-size: 14.5px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 32px; }
+  .featured-stats { display: flex; gap: 32px; }
+  .featured-stat-val { font-family: var(--serif); font-size: 28px; font-weight: 600; color: var(--gold); }
+  .featured-stat-label { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+  /* CTA */
+  .cta-band { background: var(--gold-pale); border: 1px solid rgba(197,151,58,0.2); padding: 56px 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px; margin-top: 64px; flex-wrap: wrap; }
+  .cta-band h3 { font-family: var(--serif); font-size: 32px; font-weight: 600; color: var(--navy); max-width: 480px; }
+  .cta-band p { font-size: 15px; color: var(--gray-500); margin-top: 8px; }
+
+  @media (max-width: 1024px) {
+    .projects-grid { grid-template-columns: 1fr 1fr; }
+    .featured-project { grid-template-columns: 1fr; }
+    .featured-visual { min-height: 240px; }
+  }
+  @media (max-width: 640px) {
+    .projects-grid { grid-template-columns: 1fr; }
+    .cta-band { padding: 40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark">CIG</div>
+        <div class="nav-logo-text">
+          <strong>Cahaya Indo Gemilang</strong>
+          <span>HSE Terintegrasi Radiasi</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="tentang-kami.html">Tentang Kami</a></li>
+        <li><a href="layanan.html">Layanan</a></li>
+        <li><a href="proyek-portofolio.html" class="active">Proyek &amp; Portofolio</a></li>
+        <li><a href="artikel-publikasi.html">Artikel &amp; Publikasi</a></li>
+        <li><a href="hubungi-kami.html">Hubungi Kami</a></li>
+      </ul>
+      <a href="hubungi-kami.html" class="nav-cta">Ajukan Survey</a>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-line"></div>
+  <div class="container page-hero-content">
+    <div class="page-eyebrow">Rekam Jejak Kami</div>
+    <h1 class="page-title">Proyek &amp; <em>Portofolio</em></h1>
+    <p class="page-desc">Dokumentasi proyek-proyek pengelolaan limbah B3 dan TENORM yang telah berhasil kami selesaikan bersama mitra industri terkemuka.</p>
+  </div>
+</div>
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Beranda</a>
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M4 2l4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      <span>Proyek &amp; Portofolio</span>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <!-- FEATURED -->
+    <div class="fade-up" style="margin-bottom:64px;">
+      <div class="section-eyebrow">Proyek Unggulan</div>
+      <h2 class="section-heading">Studi Kasus Terpilih</h2>
+    </div>
+    <div class="featured-project fade-up">
+      <div class="featured-visual">
+        <div class="featured-visual-grid"></div>
+        <div class="featured-badge">Proyek Unggulan</div>
+        <svg class="featured-icon" viewBox="0 0 96 96" fill="none">
+          <circle cx="48" cy="48" r="40" stroke="currentColor" stroke-width="1.5" fill="rgba(197,151,58,0.05)"/>
+          <circle cx="48" cy="48" r="12" fill="rgba(197,151,58,0.2)"/>
+          <line x1="48" y1="8" x2="48" y2="36" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="59" y1="55" x2="82" y2="69" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="37" y1="55" x2="14" y2="69" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="featured-body">
+        <div class="featured-client">Industri Migas — Kalimantan Timur</div>
+        <div class="featured-title">Survei &amp; Pengelolaan TENORM Fasilitas Produksi Minyak Bumi</div>
+        <div class="featured-desc">Program komprehensif survei radiasi lapangan, pemetaan hotspot TENORM, dan implementasi sistem pengelolaan limbah radioaktif di fasilitas produksi migas berskala besar.</div>
+        <div class="featured-stats">
+          <div>
+            <div class="featured-stat-val">12</div>
+            <div class="featured-stat-label">Titik Survei</div>
+          </div>
+          <div>
+            <div class="featured-stat-val">100%</div>
+            <div class="featured-stat-label">Kepatuhan BAPETEN</div>
+          </div>
+          <div>
+            <div class="featured-stat-val">8 Bln</div>
+            <div class="featured-stat-label">Durasi Proyek</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTER + GRID -->
+    <div class="fade-up">
+      <div class="section-eyebrow">Semua Proyek</div>
+      <h2 class="section-heading" style="margin-bottom:32px;">Rekam Jejak Lengkap</h2>
+    </div>
+    <div class="filter-tabs fade-up">
+      <div class="filter-tab active">Semua</div>
+      <div class="filter-tab">Limbah B3</div>
+      <div class="filter-tab">TENORM</div>
+      <div class="filter-tab">Konsultansi HSE</div>
+      <div class="filter-tab">Migas</div>
+      <div class="filter-tab">Minerba</div>
+    </div>
+    <div class="projects-grid fade-up">
+      <!-- Cards -->
+      <div class="project-card">
+        <div class="project-thumb">
+          <div class="project-thumb-pattern"></div>
+          <div class="project-category">TENORM</div>
+          <svg class="project-thumb-icon" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="22" stroke="currentColor" stroke-width="1.5" fill="rgba(197,151,58,0.05)"/><circle cx="28" cy="28" r="7" fill="rgba(197,151,58,0.2)"/><line x1="28" y1="6" x2="28" y2="21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="34.5" y1="31.5" x2="47.8" y2="39.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="21.5" y1="31.5" x2="8.2" y2="39.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="project-body">
+          <div class="project-client">Perusahaan Migas — Riau</div>
+          <div class="project-title">Pemetaan Hotspot Radiasi Jaringan Pipa</div>
+          <div class="project-desc">Survei menyeluruh jaringan pipa produksi sepanjang 45 km untuk identifikasi titik akumulasi TENORM dan rekomendasi penanganan.</div>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Lokasi</strong>Provinsi Riau</div>
+            <div class="project-meta-item"><strong>Durasi</strong>4 Bulan</div>
+            <div class="project-meta-item"><strong>Status</strong>Selesai</div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">
+          <div class="project-thumb-pattern"></div>
+          <div class="project-category">Limbah B3</div>
+          <svg class="project-thumb-icon" viewBox="0 0 56 56" fill="none"><path d="M20 12h16l5 10H15l5-10z" stroke="currentColor" stroke-width="1.5" fill="rgba(197,151,58,0.1)"/><path d="M13 22h30l-4 22H17L13 22z" stroke="currentColor" stroke-width="1.5" fill="rgba(197,151,58,0.05)"/><line x1="24" y1="28" x2="24" y2="38" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="32" y1="28" x2="32" y2="38" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="project-body">
+          <div class="project-client">Industri Pertambangan — Kalimantan</div>
+          <div class="project-title">Sistem Pengelolaan Limbah B3 Tambang Batubara</div>
+          <div class="project-desc">Perancangan dan implementasi sistem manajemen limbah B3 terpadu untuk operasi tambang batubara skala besar, mencakup identifikasi, penyimpanan, dan transportasi.</div>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Lokasi</strong>Kalimantan Selatan</div>
+            <div class="project-meta-item"><strong>Durasi</strong>6 Bulan</div>
+            <div class="project-meta-item"><strong>Status</strong>Selesai</div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">
+          <div class="project-thumb-pattern"></div>
+          <div class="project-category">Konsultansi HSE</div>
+          <svg class="project-thumb-icon" viewBox="0 0 56 56" fill="none"><rect x="12" y="10" width="32" height="36" rx="2" stroke="currentColor" stroke-width="1.5" fill="rgba(197,151,58,0.05)"/><line x1="20" y1="22" x2="36" y2="22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="20" y1="30" x2="36" y2="30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="20" y1="38" x2="28" y2="38" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="project-body">
+          <div class="project-client">Perusahaan EPC — Jakarta</div>
+          <div class="project-title">Penyusunan HSE Plan &amp; Risk Assessment</div>
+          <div class="project-desc">Penyusunan dokumen HSE Plan komprehensif dan HIRADC untuk proyek konstruksi fasilitas pemrosesan gas alam.</div>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Lokasi</strong>Jakarta</div>
+            <div class="project-meta-item"><strong>Durasi</strong>3 Bulan</div>
+            <div class="project-meta-item"><strong>Status</strong>Selesai</div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">
+          <div class="project-thumb-pattern"></div>
+          <div class="project-category">TENORM</div>
+          <svg class="project-thumb-icon" viewBox="0 0 56 56" fill="none"><path d="M28 8L8 18v14c0 13.25 8.55 25.63 20 28 11.45-2.37 20-14.75 20-28V18L28 8z" stroke="currentColor" stroke-width="1.5" fill="rgba(197,151,58,0.05)"/><path d="M20 28l6 6 10-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="project-body">
+          <div class="project-client">Operator Migas — Sumatera Selatan</div>
+          <div class="project-title">Dekontaminasi Peralatan Produksi Migas</div>
+          <div class="project-desc">Program dekontaminasi menyeluruh peralatan produksi yang terkontaminasi TENORM, termasuk pengelolaan dan pembuangan limbah radioaktif sesuai regulasi.</div>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Lokasi</strong>Sumatera Selatan</div>
+            <div class="project-meta-item"><strong>Durasi</strong>5 Bulan</div>
+            <div class="project-meta-item"><strong>Status</strong>Selesai</div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">
+          <div class="project-thumb-pattern"></div>
+          <div class="project-category">Limbah B3</div>
+          <svg class="project-thumb-icon" viewBox="0 0 56 56" fill="none"><rect x="10" y="24" width="12" height="22" rx="1" stroke="currentColor" stroke-width="1.5" fill="rgba(197,151,58,0.05)"/><rect x="26" y="16" width="12" height="30" rx="1" stroke="currentColor" stroke-width="1.5" fill="rgba(197,151,58,0.07)"/><rect x="42" y="10" width="4" height="36" rx="1" stroke="currentColor" stroke-width="1.5" fill="rgba(197,151,58,0.1)"/><line x1="7" y1="46" x2="49" y2="46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </div>
+        <div class="project-body">
+          <div class="project-client">Industri Kimia — Jawa Barat</div>
+          <div class="project-title">Audit &amp; Optimasi Sistem Limbah B3 Pabrik</div>
+          <div class="project-desc">Audit menyeluruh sistem pengelolaan limbah B3 pabrik kimia dan penyusunan rekomendasi perbaikan untuk memenuhi standar KLH terbaru.</div>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Lokasi</strong>Jawa Barat</div>
+            <div class="project-meta-item"><strong>Durasi</strong>2 Bulan</div>
+            <div class="project-meta-item"><strong>Status</strong>Selesai</div>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">
+          <div class="project-thumb-pattern"></div>
+          <div class="project-category">Teknologi</div>
+          <svg class="project-thumb-icon" viewBox="0 0 56 56" fill="none"><rect x="8" y="8" width="40" height="30" rx="2" stroke="currentColor" stroke-width="1.5" fill="rgba(197,151,58,0.05)"/><line x1="20" y1="38" x2="20" y2="48" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="36" y1="38" x2="36" y2="48" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="48" x2="42" y2="48" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="28" cy="23" r="6" stroke="currentColor" stroke-width="1.5"/></svg>
+        </div>
+        <div class="project-body">
+          <div class="project-client">Fasilitas Produksi — Papua</div>
+          <div class="project-title">Implementasi Sistem Monitoring Radiasi Real-Time</div>
+          <div class="project-desc">Instalasi dan konfigurasi sistem monitoring paparan radiasi terintegrasi dengan dashboard digital untuk pemantauan 24 jam di fasilitas produksi.</div>
+          <div class="project-meta">
+            <div class="project-meta-item"><strong>Lokasi</strong>Papua Barat</div>
+            <div class="project-meta-item"><strong>Durasi</strong>3 Bulan</div>
+            <div class="project-meta-item"><strong>Status</strong>Selesai</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-band fade-up">
+      <div>
+        <h3>Proyek Anda Berikutnya?</h3>
+        <p>Konsultasikan kebutuhan pengelolaan limbah dan HSE Anda dengan tim ahli kami.</p>
+      </div>
+      <a href="hubungi-kami.html" class="btn-primary">Diskusikan Proyek Anda</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Cahaya Indo Gemilang</div>
+        <div class="footer-brand-sub">HSE Terintegrasi Radiasi</div>
+        <p class="footer-brand-bio">Solusi pengelolaan limbah B3 dan TENORM untuk industri Migas &amp; Minerba Indonesia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigasi</h4>
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="tentang-kami.html">Tentang Kami</a></li>
+          <li><a href="layanan.html">Layanan</a></li>
+          <li><a href="proyek-portofolio.html">Proyek &amp; Portofolio</a></li>
+          <li><a href="artikel-publikasi.html">Artikel &amp; Publikasi</a></li>
+          <li><a href="hubungi-kami.html">Hubungi Kami</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="layanan.html">Pengelolaan Limbah B3</a></li>
+          <li><a href="layanan.html">Pengelolaan TENORM</a></li>
+          <li><a href="layanan.html">Konsultansi K3L/HSE</a></li>
+          <li><a href="layanan.html">Pengembangan Teknologi</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legalitas</h4>
+        <div class="footer-cert-badges">
+          <span class="footer-cert">KLH</span><span class="footer-cert">BAPETEN</span>
+          <span class="footer-cert">SKK Migas</span><span class="footer-cert">ISO HSE</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 PT Cahaya Indo Gemilang. All rights reserved.</div>
+      <div class="footer-reg">Kompartemen Pengelola HSE Terintegrasi Radiasi</div>
+    </div>
+  </div>
+</footer>
+<script>
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 60));
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => { if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), i * 80); observer.unobserve(entry.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Filter tabs
+  document.querySelectorAll('.filter-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
