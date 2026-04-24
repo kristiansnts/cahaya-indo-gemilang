@@ -418,6 +418,7 @@ body { font-family: var(--sans); color: var(--gray-900); background: var(--white
 .form-submit:hover { background: var(--gold-light); }
 .form-note { font-size: 12px; color: rgba(255,255,255,0.3); text-align: center; margin-top: 14px; }
 .map-placeholder { height: 280px; background: linear-gradient(135deg, var(--navy-mid), var(--navy-light)); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; margin-top: 48px; }
+.map-embed { height: 320px; margin-top: 48px; overflow: hidden; }
 .map-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(197,151,58,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(197,151,58,0.06) 1px, transparent 1px); background-size: 40px 40px; }
 .map-pin { position: relative; z-index: 2; text-align: center; }
 .map-pin-icon { width: 48px; height: 48px; background: var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; }
@@ -429,8 +430,53 @@ body { font-family: var(--sans); color: var(--gray-900); background: var(--white
 .why-label { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
 .why-desc { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
 
+
+/* ── ORG CHART ── */
+.org-wrap { overflow-x: auto; padding: 4px 0 16px; }
+.org-scroll-hint { display: none; text-align: center; font-size: 12px; color: var(--gray-500); margin-bottom: 16px; }
+.org-chart { min-width: 660px; display: flex; flex-direction: column; align-items: center; }
+
+.org-node { padding: 16px 24px; text-align: center; border: 1.5px solid var(--gray-200); background: var(--white); }
+.org-node-role { font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+.org-node-name { font-size: 13.5px; font-weight: 600; color: var(--navy); line-height: 1.4; }
+.org-node-name.tbd { color: var(--gray-500); font-style: italic; font-weight: 400; font-size: 12px; }
+
+.org-director-node { background: var(--navy); border-color: var(--navy); min-width: 200px; }
+.org-director-node .org-node-role { color: var(--gold-light); }
+.org-director-node .org-node-name { color: var(--white); }
+
+.org-gm-node { background: var(--gold); border-color: var(--gold); min-width: 220px; }
+.org-gm-node .org-node-role { color: rgba(11,30,61,0.6); }
+.org-gm-node .org-node-name { color: var(--navy); font-size: 15px; }
+
+.org-mgr-node { min-width: 180px; max-width: 200px; }
+
+.org-experts-node { background: rgba(197,151,58,0.06); border-color: rgba(197,151,58,0.35); min-width: 200px; max-width: 220px; }
+.org-experts-node .org-node-role { text-align: center; display: block; }
+.org-experts-list { list-style: decimal; padding-left: 18px; margin: 10px 0 0; font-size: 12px; color: var(--navy); line-height: 1.9; text-align: left; }
+
+/* Directors row */
+.org-directors { display: flex; justify-content: center; gap: 48px; }
+
+/* 2-to-1 connector: horizontal bar from each director center, vertical spine from middle */
+.org-2to1 { width: 448px; height: 32px; position: relative; flex-shrink: 0; }
+.org-2to1::before { content: ''; position: absolute; top: 0; left: 100px; right: 100px; height: 2px; background: var(--gold); }
+.org-2to1::after { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 100%; background: var(--gold); }
+
+/* Generic vertical line */
+.org-v-line { width: 2px; height: 32px; background: var(--gold); flex-shrink: 0; }
+
+/* 1-to-many branch: classic CSS org chart branch */
+.org-branch { display: flex; align-items: flex-start; }
+.org-branch-item { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 32px 20px 0; position: relative; }
+.org-branch-item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--gold); }
+.org-branch-item:first-child::before { left: 50%; }
+.org-branch-item:last-child::before { right: 50%; }
+.org-branch-item::after { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 32px; background: var(--gold); }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
+  .org-scroll-hint { display: block; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-badges { display: none; }

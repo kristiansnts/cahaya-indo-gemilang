@@ -15,7 +15,7 @@ export default function Contact() {
               <div className={styles.itemIcon}>📍</div>
               <div>
                 <h5>Kantor Pusat</h5>
-                <p>Wahid 27 Building 4th Floor, Kebon Sirih, Menteng, Central Jakarta</p>
+                <p>Infiniti Office, Menara Cakrawala Lt 12, Unit 05A, Jl. M.H. Thamrin No.9, Menteng, Jakarta Pusat 10340</p>
               </div>
             </div>
             <div className={styles.contactItem}>

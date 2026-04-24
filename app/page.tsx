@@ -76,7 +76,7 @@ export default function Home() {
               <div className="about-stripe" />
               <div className="about-card">
                 <div className="about-card-label">Dipimpin Oleh</div>
-                <div className="about-card-name">Muhammad Rifli</div>
+                <div className="about-card-name">Firdaus Ronnyco I.S</div>
                 <div className="about-card-title">Direktur Utama</div>
               </div>
             </div>
@@ -215,7 +215,7 @@ export default function Home() {
               <div className="contact-items">
                 <div className="contact-item">
                   <div className="contact-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-                  <div><h5>Kantor Pusat</h5><p>Wahid 27 Building 4th Floor, Kebon Sirih, Menteng, Jakarta Pusat</p></div>
+                  <div><h5>Kantor Pusat</h5><p>Infiniti Office, Menara Cakrawala Lt 12, Unit 05A, Jl. M.H. Thamrin No.9, Menteng, Jakarta Pusat 10340</p></div>
                 </div>
                 <div className="contact-item">
                   <div className="contact-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/></svg></div>

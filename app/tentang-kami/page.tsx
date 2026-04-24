@@ -197,7 +197,83 @@ export default function TentangKami() {
         </div>
       </section>
 
-      {/* TEAM */}
+      {/* ORG CHART */}
+      <section className="section" style={{ background: 'var(--gray-50)' }}>
+        <div className="container">
+          <div className="fade-up" style={{ textAlign: 'center', maxWidth: 540, margin: '0 auto 48px' }}>
+            <div className="section-eyebrow" style={{ justifyContent: 'center' }}>Struktur Organisasi</div>
+            <h2 className="section-heading">Manajemen &amp; Tim</h2>
+            <p style={{ color: 'var(--gray-600)', fontSize: 14.5 }}>Dipimpin oleh jajaran direksi berpengalaman dan didukung tim manajerial yang kompeten di bidangnya.</p>
+          </div>
+          <div className="org-wrap fade-up">
+            <p className="org-scroll-hint">← Geser untuk melihat selengkapnya →</p>
+            <div className="org-chart">
+
+              {/* Level 1: Two directors */}
+              <div className="org-directors">
+                <div className="org-node org-director-node">
+                  <div className="org-node-role">Direktur Utama</div>
+                  <div className="org-node-name">Firdaus Ronnyco I.S, SE</div>
+                </div>
+                <div className="org-node org-director-node">
+                  <div className="org-node-role">Direktur Operasional</div>
+                  <div className="org-node-name">Arthur Soritua Siregar, S.Psi</div>
+                </div>
+              </div>
+
+              {/* 2-to-1 connector */}
+              <div className="org-2to1" />
+
+              {/* Level 2: GM */}
+              <div className="org-node org-gm-node">
+                <div className="org-node-role">General Manager</div>
+                <div className="org-node-name">Sadbudiono</div>
+              </div>
+
+              {/* Vertical line to branch */}
+              <div className="org-v-line" />
+
+              {/* Level 3: Three managers with branch connector */}
+              <div className="org-branch">
+                <div className="org-branch-item">
+                  <div className="org-node org-mgr-node">
+                    <div className="org-node-role">Manager Teknis Lingkungan</div>
+                    <div className="org-node-name tbd">Ditetapkan kemudian</div>
+                  </div>
+                </div>
+
+                <div className="org-branch-item">
+                  <div className="org-node org-mgr-node">
+                    <div className="org-node-role">Manager Keselamatan Radiasi</div>
+                    <div className="org-node-name tbd">Ditetapkan kemudian</div>
+                  </div>
+                  <div className="org-v-line" style={{ height: 24 }} />
+                  <div className="org-node org-experts-node">
+                    <div className="org-node-role">Tenaga Ahli</div>
+                    <ol className="org-experts-list">
+                      <li>Ahli Pengelolaan Limbah B3</li>
+                      <li>Ahli Teknik Lingkungan</li>
+                      <li>Ahli Keselamatan Radiasi</li>
+                      <li>Ahli Ketenaganukliran</li>
+                      <li>Tenaga Teknis Pengelolaan Limbah</li>
+                    </ol>
+                  </div>
+                </div>
+
+                <div className="org-branch-item">
+                  <div className="org-node org-mgr-node">
+                    <div className="org-node-role">Manager Keuangan</div>
+                    <div className="org-node-name tbd">Ditetapkan kemudian</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section className="section">
         <div className="container">
           <div className="fade-up" style={{ textAlign: 'center', maxWidth: 480, margin: '0 auto' }}>

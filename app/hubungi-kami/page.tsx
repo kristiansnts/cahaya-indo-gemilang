@@ -6,7 +6,7 @@ import Link from 'next/link';
 const contactItems = [
   {
     label: 'Kantor Pusat',
-    lines: ['Wahid 27 Building, Lantai 4', 'Jl. KH. Wahid Hasyim No. 27', 'Kebon Sirih, Menteng, Jakarta Pusat 10340'],
+    lines: ['Infiniti Office, Menara Cakrawala Lt 12, Unit 05A', 'Jl. M.H. Thamrin No.9, Kebon Sirih', 'Kecamatan Menteng, Jakarta Pusat 10340'],
     href: undefined as string | undefined,
   },
   {
@@ -114,17 +114,17 @@ export default function HubungiKami() {
                 ))}
               </div>
 
-              <div className="map-placeholder">
-                <div className="map-grid"></div>
-                <div className="map-pin">
-                  <div className="map-pin-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0b1e3d" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5" fill="#0b1e3d"/>
-                    </svg>
-                  </div>
-                  <div className="map-pin-label">Wahid 27 Building, Lt. 4</div>
-                  <div className="map-pin-address">Menteng, Jakarta Pusat</div>
-                </div>
+              <div className="map-embed">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.590014449401!2d106.8236974!3d-6.185584800000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5f2a2b7c0b1%3A0x460c029eefb0ae91!2sInfiniti%20Office%20-%20Sarinah%20Thamrin!5e0!3m2!1sen!2sid!4v1777012458444!5m2!1sen!2sid"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, display: 'block' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Lokasi PT Cahaya Indo Gemilang"
+                />
               </div>
             </div>
 
