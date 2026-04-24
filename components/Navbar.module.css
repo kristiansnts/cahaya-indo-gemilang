@@ -1,0 +1,43 @@
+.header {
+  height: var(--header-height);
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logoImage {
+  object-fit: contain;
+  height: auto;
+}
+
+.nav ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    display: none;
+  }
+}

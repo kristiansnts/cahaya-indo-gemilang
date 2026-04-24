@@ -1,0 +1,38 @@
+.member {
+  text-align: center;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  background: var(--bg-alt);
+  border: 4px solid var(--border);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.personIcon, .groupIcon {
+  font-size: 4rem;
+  opacity: 0.2;
+}
+
+.name {
+  margin-bottom: 0.2rem;
+  font-size: 1.1rem;
+}
+
+.suffix {
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}

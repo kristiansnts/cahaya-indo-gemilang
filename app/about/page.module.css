@@ -1,0 +1,184 @@
+.section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.altBg {
+  background-color: #f8fafc;
+}
+
+.sectionHeader {
+  margin-bottom: 50px;
+  max-width: 800px;
+}
+
+.sectionHeaderCenter {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categoryBadge {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: rgba(229, 62, 62, 0.1);
+  color: #e53e3e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 4px;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1a202c;
+  line-height: 1.2;
+}
+
+.profilContent {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.textBlock p {
+  font-size: 1.1rem;
+  color: #4a5568;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.visionMissionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.visionCard {
+  background: #1a202c;
+  color: white;
+  padding: 40px;
+  border-radius: 16px;
+}
+
+.visionCard h3 {
+  color: #e53e3e;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.visionCard p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.missionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.missionItem {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #2d3748;
+}
+
+.missionIcon {
+  color: #e53e3e;
+  flex-shrink: 0;
+  font-weight: bold;
+}
+
+.quoteSection {
+  background-color: #f1f5f9;
+  padding: 60px;
+  border-radius: 24px;
+  border-left: 8px solid #e53e3e;
+  margin: 60px 0;
+}
+
+.quoteText {
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.4;
+  margin-bottom: 30px;
+}
+
+.quoteAuthor {
+  display: flex;
+  flex-direction: column;
+}
+
+.quoteAuthor strong {
+  font-size: 1.2rem;
+  color: #1a202c;
+}
+
+.quoteAuthor span {
+  color: #64748b;
+}
+
+.expertGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.expertCard {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.3s ease;
+}
+
+.expertCard:hover {
+  transform: translateY(-5px);
+  border-color: #e53e3e;
+}
+
+.expertIcon {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.expertTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 10px;
+}
+
+.expertDesc {
+  font-size: 0.95rem;
+  color: #718096;
+  line-height: 1.5;
+}
+
+@media (max-width: 968px) {
+  .profilContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .visionMissionGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quoteText {
+    font-size: 1.4rem;
+  }
+}

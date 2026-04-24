@@ -1,0 +1,109 @@
+.aboutContainer {
+  align-items: center;
+  gap: 4rem;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.mainImage {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlayCard {
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-left: 4px solid var(--accent);
+  min-width: 200px;
+}
+
+.dipimpin {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  display: block;
+}
+
+.name {
+  margin: 0.2rem 0;
+  font-size: 1.1rem;
+}
+
+.title {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.sub {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.heading {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.textContent p {
+  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+.features {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  flex: 1;
+  background: var(--bg-alt);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.featureIcon {
+  font-size: 1.5rem;
+}
+
+.feature h5 {
+  margin-bottom: 0.2rem;
+}
+
+.feature p {
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+@media (max-width: 968px) {
+  .aboutContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .overlayCard {
+    right: 20px;
+    bottom: 20px;
+  }
+}
