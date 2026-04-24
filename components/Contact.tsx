@@ -29,7 +29,7 @@ export default function Contact() {
               <div className={styles.itemIcon}>✉️</div>
               <div>
                 <h5>Email</h5>
-                <p>digdosesudarto@gmail.com</p>
+                <p>cahayaindogemilang88@gmail.com</p>
               </div>
             </div>
           </div>

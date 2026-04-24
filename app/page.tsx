@@ -168,47 +168,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* TEAM */}
-      <section id="team" className="section">
-        <div className="container">
-          <div className="fade-up" style={{ textAlign: 'center', maxWidth: 520, margin: '0 auto' }}>
-            <div className="section-eyebrow" style={{ justifyContent: 'center' }}>Tim Ahli Kami</div>
-            <h2 className="section-heading">Profesional Berpengalaman di Bidang Rekayasa Nuklir &amp; Lingkungan</h2>
-          </div>
-          <div className="team-grid fade-up">
-            {[
-              { name: 'Abd Ghani Hasan', suffix: 'BSc.Eng, MBA', role: 'Special Advisor for Director' },
-              { name: 'Drs. Sudarto Digdose', suffix: 'M.Eng.', role: 'Head of Compartement' },
-              { name: 'Firdaus Ronnyco, SE', suffix: '', role: 'General Manager' },
-            ].map(m => (
-              <div key={m.name} className="team-card">
-                <div className="team-avatar">
-                  <div className="team-avatar-inner"><div className="team-avatar-sil" /></div>
-                  <div className="team-avatar-gold" />
-                </div>
-                <div className="team-info">
-                  <div className="team-name">{m.name}</div>
-                  {m.suffix && <div className="team-suffix">{m.suffix}</div>}
-                  <div className="team-role">{m.role}</div>
-                </div>
-              </div>
-            ))}
-            <div className="team-card team-group-card">
-              <div className="team-avatar" style={{ background: 'var(--gray-100)' }}>
-                <div className="team-avatar-inner" style={{ background: 'var(--gray-100)', alignItems: 'center', justifyContent: 'center' }}>
-                  <svg width="56" height="56" viewBox="0 0 56 56" fill="none" style={{ opacity: 0.25 }}><circle cx="20" cy="18" r="8" stroke="#374151" strokeWidth="1.5"/><circle cx="36" cy="18" r="8" stroke="#374151" strokeWidth="1.5"/><path d="M4 44c0-8.837 7.163-16 16-16h16c8.837 0 16 7.163 16 16" stroke="#374151" strokeWidth="1.5" strokeLinecap="round"/></svg>
-                </div>
-                <div className="team-avatar-gold" style={{ background: 'var(--gray-300)' }} />
-              </div>
-              <div className="team-info">
-                <div className="team-name" style={{ color: 'var(--gray-700)' }}>Kelompok Keahlian</div>
-                <div className="team-role">Expert Group — Tim Spesialis</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CONTACT */}
       <section id="contact" className="contact-section section">
         <div className="container">
@@ -228,7 +187,7 @@ export default function Home() {
                 </div>
                 <div className="contact-item">
                   <div className="contact-item-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-                  <div><h5>Email</h5><p>digdosesudarto@gmail.com</p></div>
+                  <div><h5>Email</h5><p>cahayaindogemilang88@gmail.com</p></div>
                 </div>
               </div>
             </div>

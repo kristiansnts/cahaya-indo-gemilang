@@ -21,8 +21,8 @@ const contactItems = [
   },
   {
     label: 'Email',
-    lines: ['digdosesudarto@gmail.com'],
-    href: 'mailto:digdosesudarto@gmail.com',
+    lines: ['cahayaindogemilang88@gmail.com'],
+    href: 'mailto:cahayaindogemilang88@gmail.com',
   },
 ];
 

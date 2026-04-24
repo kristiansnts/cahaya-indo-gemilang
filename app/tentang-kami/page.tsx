@@ -274,7 +274,7 @@ export default function TentangKami() {
       </section>
 
 
-      <section className="section">
+      {/* <section className="section">
         <div className="container">
           <div className="fade-up" style={{ textAlign: 'center', maxWidth: 480, margin: '0 auto' }}>
             <div className="section-eyebrow" style={{ justifyContent: 'center' }}>Tim Ahli</div>
@@ -308,7 +308,7 @@ export default function TentangKami() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </>
