@@ -2,6 +2,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import HomeContactForm from '@/components/HomeContactForm';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -40,8 +41,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* TRUST BAR */}
       <div className="trust-bar">
         <div className="container">
           <div className="trust-bar-inner">
@@ -71,7 +70,13 @@ export default function Home() {
           <div className="about-grid">
             <div className="about-img-wrapper fade-up">
               <div className="about-img-placeholder">
-                <div className="about-img-silhouette" />
+                <Image
+                  src="/images/image-1.jpg"
+                  alt="Tim lapangan PT Cahaya Indo Gemilang"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                />
               </div>
               <div className="about-stripe" />
               <div className="about-card">
