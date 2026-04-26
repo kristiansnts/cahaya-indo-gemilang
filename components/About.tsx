@@ -26,7 +26,7 @@ export default function About() {
           <div className="fade-up">
             <div className="section-eyebrow">Tentang Kami</div>
             <h2 className="section-heading">Mencegah &amp; Memitigasi Risiko Lingkungan Industri</h2>
-            <p className="about-body">PT Cahaya Indo Gemilang bergerak di bidang pengelolaan limbah B3 dan kini mengembangkan unit khusus <strong>Kompartemen Pengelola HSE Terintegrasi Radiasi</strong>.</p>
+            <p className="about-body">PT Cahaya Indo Gemilang bergerak di bidang pengelolaan limbah B3 dan kini mengembangkan unit khusus <strong>Pengelola HSE Terintegrasi Radiasi</strong>.</p>
             <p className="about-body">Kami merespons kebutuhan keselamatan di sektor industri migas dan minerba dengan solusi yang mencegah dampak limbah Berbahaya dan Beracun serta Terkontaminasi Radioaktif (TENORM/MIR).</p>
             <div className="about-features">
               <div className="about-feature">

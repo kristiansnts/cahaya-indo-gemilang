@@ -53,7 +53,7 @@ export default function AboutPage() {
               <span className={styles.categoryBadge}>PROFIL PERUSAHAAN</span>
               <h2 className={styles.sectionTitle}>Mitra Strategis Pengelolaan Limbah Nasional</h2>
               <p>
-                PT RRAD Jaya Abadi adalah perusahaan yang bergerak di bidang pengelolaan limbah B3 dan kini mengembangkan unit khusus berupa <strong>Kompartemen Pengelola HSE Terintegrasi Radiasi</strong>.
+                PT RRAD Jaya Abadi adalah perusahaan yang bergerak di bidang pengelolaan limbah B3 dan kini mengembangkan unit khusus berupa <strong>Pengelola HSE Terintegrasi Radiasi</strong>.
               </p>
               <p>
                 Kami fokus mencegah, memantau, dan memitigasi dampak Limbah B3 Terkontaminasi Radioaktif/TENORM/MIR. Ini adalah bentuk respons kami terhadap meningkatnya kebutuhan keselamatan lingkungan, pekerja, serta masyarakat di sektor industri migas, minerba, dan sektor industri lainnya.

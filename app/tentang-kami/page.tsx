@@ -99,7 +99,7 @@ export default function TentangKami() {
               <div className="section-eyebrow">Profil Perusahaan</div>
               <h2 className="section-heading">Mencegah &amp; Memitigasi Risiko Lingkungan Industri</h2>
               <div className="gold-line"></div>
-              <p>PT Cahaya Indo Gemilang adalah perusahaan yang bergerak di bidang <strong>pengelolaan limbah Bahan Berbahaya dan Beracun (B3)</strong> serta pengembangan unit khusus Kompartemen Pengelola HSE Terintegrasi Radiasi.</p>
+              <p>PT Cahaya Indo Gemilang adalah perusahaan yang bergerak di bidang <strong>pengelolaan limbah Bahan Berbahaya dan Beracun (B3)</strong> serta pengembangan unit khusus Pengelola HSE Terintegrasi Radiasi.</p>
               <p>Didirikan dengan komitmen penuh terhadap keselamatan kerja dan kelestarian lingkungan, kami hadir untuk merespons kebutuhan sektor industri migas dan minerba akan solusi penanganan <strong>TENORM/MIR (Naturally Occurring Radioactive Materials)</strong> yang profesional dan sesuai regulasi.</p>
               <p>Dengan tim ahli bersertifikasi nasional dan jaringan mitra strategis, PT Cahaya Indo Gemilang memberikan layanan komprehensif — mulai dari survei awal, identifikasi risiko, hingga pengelolaan akhir limbah berbahaya.</p>
               <div style={{ display: 'flex', gap: 16, marginTop: 32, flexWrap: 'wrap' }}>
