@@ -237,14 +237,12 @@ export default function TentangKami() {
                 <div className="org-branch-item">
                   <div className="org-node org-mgr-node">
                     <div className="org-node-role">Manager Teknis Lingkungan</div>
-                    <div className="org-node-name tbd">Ditetapkan kemudian</div>
                   </div>
                 </div>
 
                 <div className="org-branch-item">
                   <div className="org-node org-mgr-node">
                     <div className="org-node-role">Manager Keselamatan Radiasi</div>
-                    <div className="org-node-name tbd">Ditetapkan kemudian</div>
                   </div>
                   <div className="org-v-line" style={{ height: 24 }} />
                   <div className="org-node org-experts-node">
@@ -262,7 +260,6 @@ export default function TentangKami() {
                 <div className="org-branch-item">
                   <div className="org-node org-mgr-node">
                     <div className="org-node-role">Manager Keuangan</div>
-                    <div className="org-node-name tbd">Ditetapkan kemudian</div>
                   </div>
                 </div>
               </div>
