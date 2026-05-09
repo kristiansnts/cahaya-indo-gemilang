@@ -56,11 +56,6 @@ const timeline = [
   },
 ] as const;
 
-const leaders: Array<{ name: string; suffix?: string; role: string }> = [
-  { name: 'Abd Ghani Hasan', suffix: 'BSc.Eng, MBA', role: 'Special Advisor for Director' },
-  { name: 'Drs. Sudarto Digdose', suffix: 'M.Eng.', role: 'Head of Compartement' },
-  { name: 'Firdaus Ronnyco, SE', role: 'General Manager' },
-];
 
 export default function TentangKami() {
   return (
@@ -305,6 +300,39 @@ export default function TentangKami() {
           </div>
         </div>
       </section> */}
+
+      {/* KERJASAMA / KOLABORASI */}
+      <section className="section">
+        <div className="container">
+          <div className="fade-up" style={{ textAlign: 'center', maxWidth: 520, margin: '0 auto 48px' }}>
+            <div className="section-eyebrow" style={{ justifyContent: 'center' }}>Kemitraan</div>
+            <h2 className="section-heading">Mitra Kolaborasi</h2>
+            <p style={{ color: 'var(--gray-600)', fontSize: 14.5 }}>PT Cahaya Indo Gemilang berkolaborasi dengan organisasi yang berpengalaman membangun <strong>Sistem Pengelolaan HSE Terintegrasi Radiasi</strong>.</p>
+          </div>
+          <div className="fade-up" style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 32 }}>
+            <a
+              href="https://maspala-indonesia.or.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="partner-card"
+            >
+              <div style={{ position: 'relative', width: 140, height: 140, borderRadius: 12, overflow: 'hidden', background: 'var(--gray-50)' }}>
+                <Image
+                  src="/images/kerjasama/maspala-indo.jpeg"
+                  alt="Logo MasPALA Indonesia"
+                  fill
+                  style={{ objectFit: 'contain', padding: 8 }}
+                  sizes="140px"
+                />
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontWeight: 700, color: 'var(--navy)', fontSize: 15, marginBottom: 4 }}>MasPALA Indonesia</div>
+                <div style={{ color: 'var(--gray-500)', fontSize: 13 }}>maspala-indonesia.or.id</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </>
