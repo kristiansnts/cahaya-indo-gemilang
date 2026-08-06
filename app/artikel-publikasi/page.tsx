@@ -1,8 +1,8 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ArtikelGrid from '@/components/ArtikelGrid';
+import PublikasiGallery from '@/components/PublikasiGallery';
 import PageHero from '@/components/PageHero';
-import Link from 'next/link';
 
 const featuredArticle = {
   category: 'Regulasi & Kepatuhan',
@@ -60,6 +60,19 @@ export default function ArtikelPublikasi() {
           </div>
 
           <ArtikelGrid />
+        </div>
+      </section>
+
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="fade-up" style={{ marginBottom: 32 }}>
+            <div className="section-eyebrow">Dokumentasi</div>
+            <h2 className="section-heading">Kegiatan &amp; Kemitraan</h2>
+            <p style={{ color: 'var(--gray-500)', fontSize: 15, lineHeight: 1.7, maxWidth: 560, marginTop: 12 }}>
+              Dokumentasi kegiatan, kerjasama, dan verifikasi produk Alkes PT Cahaya Indo Gemilang.
+            </p>
+          </div>
+          <PublikasiGallery />
         </div>
       </section>
 
