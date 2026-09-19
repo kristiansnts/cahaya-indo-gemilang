@@ -1,8 +1,10 @@
+import { Suspense } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ArtikelGrid from '@/components/ArtikelGrid';
 import PublikasiGallery from '@/components/PublikasiGallery';
 import PageHero from '@/components/PageHero';
+import { listPublikasi } from '@/lib/publikasi';
 
 const featuredArticle = {
   category: 'Regulasi & Kepatuhan',
@@ -13,7 +15,22 @@ const featuredArticle = {
   readTime: '12 menit baca',
 } as const;
 
-export default function ArtikelPublikasi() {
+type SearchParams = Promise<{ page?: string; kat?: string }>;
+
+export default async function ArtikelPublikasi({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
+  const params = await searchParams;
+  const page = Math.max(1, Number.parseInt(params.page ?? '1', 10) || 1);
+  const category = params.kat ?? 'Semua';
+
+  const { items, total, totalPages, page: currentPage } = await listPublikasi({
+    page,
+    category,
+  });
+
   return (
     <>
       <Navbar />
@@ -27,16 +44,15 @@ export default function ArtikelPublikasi() {
 
       <section className="section">
         <div className="container">
-          {/* FEATURED */}
           <div className="fade-up" style={{ marginBottom: 32 }}>
             <div className="section-eyebrow">Artikel Pilihan</div>
             <h2 className="section-heading">Bacaan Terkini</h2>
           </div>
           <div className="featured-article fade-up">
             <div className="featured-article-thumb" style={{ padding: 0, overflow: 'hidden' }}>
-              <img 
-                src="/images/artikel-utama-regulasi.png" 
-                alt={featuredArticle.title} 
+              <img
+                src="/images/artikel-utama-regulasi.png"
+                alt={featuredArticle.title}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
               <div className="featured-label">Artikel Utama</div>
@@ -72,7 +88,20 @@ export default function ArtikelPublikasi() {
               Dokumentasi kegiatan, kerjasama, dan verifikasi produk Alkes PT Cahaya Indo Gemilang.
             </p>
           </div>
-          <PublikasiGallery />
+          <Suspense fallback={<p style={{ color: 'var(--gray-500)' }}>Memuat dokumentasi…</p>}>
+            <PublikasiGallery
+              items={items.map((i) => ({
+                id: i.id,
+                title: i.title,
+                category: i.category,
+                imageUrl: i.imageUrl,
+              }))}
+              page={currentPage}
+              totalPages={totalPages}
+              total={total}
+              category={category}
+            />
+          </Suspense>
         </div>
       </section>
 

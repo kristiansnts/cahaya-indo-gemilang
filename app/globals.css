@@ -1888,6 +1888,19 @@ body {
   justify-content: center;
 }
 
+/* Group photos: taller crop + top bias so faces aren't clipped */
+.publikasi-thumb {
+  aspect-ratio: 4/3;
+  background: #0b1e3d;
+}
+
+.publikasi-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
 .project-thumb-pattern {
   position: absolute;
   inset: 0;
@@ -3216,4 +3229,155 @@ body {
 .partner-card:hover {
   box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
   border-color: var(--gold);
+}
+/* —— Admin —— */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.admin-shell {
+  min-height: 100vh;
+  padding: 48px 24px 80px;
+  background: linear-gradient(180deg, #f7f5f0 0%, #fff 40%);
+}
+
+.admin-header {
+  max-width: 960px;
+  margin: 0 auto 32px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.admin-card {
+  max-width: 960px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  padding: 28px;
+}
+
+.admin-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 16px;
+}
+
+.admin-input {
+  padding: 12px 14px;
+  border: 1px solid var(--gray-200);
+  font-size: 15px;
+  color: var(--navy);
+  background: var(--white);
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 400;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.admin-table th,
+.admin-table td {
+  text-align: left;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: middle;
+  color: var(--navy);
+}
+
+.admin-table th {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+}
+
+.admin-thumb {
+  width: 64px;
+  height: 48px;
+  object-fit: cover;
+  display: block;
+  background: var(--navy);
+}
+
+.admin-danger {
+  border: none;
+  background: transparent;
+  color: #b42318;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-danger:hover {
+  text-decoration: underline;
+}
+
+.publikasi-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.publikasi-page-btn {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  color: var(--navy);
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.publikasi-page-btn:hover {
+  border-color: var(--gold);
+}
+
+.publikasi-page-btn.active {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+
+.publikasi-page-btn.disabled {
+  opacity: 0.4;
+  pointer-events: none;
 }
